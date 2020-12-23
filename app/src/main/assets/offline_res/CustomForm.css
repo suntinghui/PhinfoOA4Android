@@ -1,0 +1,252 @@
+﻿input 
+{
+    height:25px;
+}
+th {
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+}
+body .pbBody table.list .actionColumn {
+    /*color: #999;
+    padding: 5px 5px 2px;*/
+}
+.listViewportWrapper .listViewport .x-grid3-td-ACTION_COLUMN a, body .pbBody table.list td.actionColumn .actionLink {
+    color: #015ba7;
+    font-weight: normal;
+    text-decoration: none;
+}
+.body .list {
+    width: 100%;
+    border: 1px solid #e0e3e5;
+    background-color: #fff;
+}
+.list {
+    width: 100%;
+    border: 1px solid #e0e3e5;
+    background-color: #fff;
+}
+body .pbBody table.list tr.dataRow th, body .pbBody table.list tr.dataRow td {
+    border-width: 0 0 1px;
+    vertical-align: middle;
+}
+.list tr.even th, .list tr.odd th {
+    font-weight: normal;
+    white-space: normal;
+}
+.list tr.even th, .list tr.odd th, .list tr.even td, .list tr.odd td {
+    vertical-align: top;
+}
+.list td, .list th, body.oldForecast .list .last td, body.oldForecast .list .last th {
+    border-bottom: 1px solid #e0e3e5;
+    color: #333;
+    padding: 4px 2px 4px 5px;
+}
+table.list tr th {
+    border: 1px solid #ededed;
+    color: #000;
+}
+table.list tr.headerRow th {
+    background: #f2f3f3 none repeat scroll 0 0;
+    border-color: #e0e3e5;
+    border-width: 0 0 1px 1px;
+    color: #000;
+    font-size: 0.9em;
+    font-weight: bold;
+    padding: 5px 2px 4px 5px;
+    text-align: left;
+    white-space: nowrap;
+}
+table.list tr.headerRow th:first-child,table.list tr.dataRow td:first-child {
+    border-left-width: 0;
+}
+body .pbBody table.list tr.last > th, body .pbBody table.list tr.last > td, .bPageBlock.bEditBlock .bRelatedList tr.dataRow.last > td, .bPageBlock.bEditBlock .bRelatedList tr.dataRow.last > th {
+    border-bottom-width: 0;
+}
+.list .headerRow th {
+    font-size: 93%;
+}
+.list .headerRow th {
+    border-bottom: 2px solid #ccc;
+    white-space: nowrap;
+}
+.list .noRows, .bRelatedList .list .noRowsHeader {
+    border-bottom: medium none;
+    font-size: 91%;
+    font-weight: normal;
+    padding-bottom: 0;
+}
+.list .numericalColumn, .list .numericalColumn, .list .CurrencyElement, .list .QuoteDocCreatedBy {
+    text-align: right;
+}
+
+.bEditBlock input, .bEditBlock select, .bEditBlock img, .quickCreateModule input, .quickCreateModule select, .quickCreateModule img {
+    margin-right: 0.25em;
+    vertical-align: middle;
+}
+input {
+    padding-top: 0;
+}
+*::-moz-placeholder {
+    text-overflow: ellipsis;
+}
+.bPageBlock .dataCol {
+    text-align: left;
+}
+.pbBody, .pbBody a, .pbBody td, .lbBody a, .lbBodyDescription, .list .headerRow .noRowsHeader {
+    color: #000;
+}
+body, td {
+    color: #222;
+    font-family: Arial,Helvetica,sans-serif;
+}
+body, td {
+    color: #333;
+}
+.pbBody, .pbBody a, .pbBody td, .lbBody a, .lbBodyDescription, .list .headerRow .noRowsHeader {
+    color: #000;
+}
+.bPageBlock {
+    font-size: 105%;
+}
+body, td {
+    color: #222;
+    font-family: Arial,Helvetica,sans-serif;
+}
+body, td {
+    color: #333;
+}
+
+body {
+    font-size: 75%;
+}
+
+/*s*/
+
+.pbBody, .pbBody a, .pbBody td, .lbBody a, .lbBodyDescription, .list .headerRow .noRowsHeader {
+    color: #000;
+    text-decoration:none;
+}
+button, .x-btn,.btn, .btnDisabled, .btnCancel, .menuButton .menuButtonButton {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: #e8e8e9 url("/img/alohaSkin/btn_sprite.png") repeat-x scroll right top;
+    border-color: #b5b5b5 #b5b5b5 #7f7f7f;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    color: #333;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 1px;
+    padding: 0 3px;
+}
+.bPageBlock {
+    border-top-width: 3px;
+    margin-bottom: 10px;
+    padding: 0;
+    background-image: none;
+
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    clear: both;
+}
+.bPageBlock, body #bodyCell .bResource .secondaryPalette, body .secondaryPalette.bPageBlock, body .individualPalette .secondaryPalette.bPageBlock, body .bodyDiv .genericTable, body .genericPageBlockTable, body .bodyDiv .bSubBlock, body .bComponentBlock .bPageBlock, body .bMyDashboard .bPageBlock, body.rlHoverFrame .bPageBlock, body.subjectSelectionPopup div.choicesBox, body.lookupTab .secondaryPalette.bPageBlock, body.popupTab .secondaryPalette.bPageBlock, body.UserTagStatsPage .secondaryPalette.bPageBlock {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #eaeaea;
+    border-left: 1px solid #eaeaea;
+    border-radius: 4px;
+    border-right: 1px solid #eaeaea;
+}
+
+.bRelatedList .bPageBlock,.listRelatedObject .bPageBlock, body.lookupTab .listRelatedObject .bPageBlock, body.popupTab .listRelatedObject .bPageBlock {
+    border-bottom-color: #e0e3e5;
+    border-left-color: #e0e3e5;
+    border-right-color: #e0e3e5;
+}
+.bRelatedList .bPageBlock .pbHeader, body .listRelatedObject .bPageBlock .pbHeader {
+    border: 0 none;
+}
+body .bPageBlock .pbHeader {
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+}
+body .bRelatedList .bPageBlock .pbTitle {
+    padding: 0 5px;
+}
+.bRelatedList .bPageBlock .pbButton {
+    white-space: normal;
+}
+.bEditBlock .pbHeader > table > tbody > tr > td, .bPageBlock .pbHeader > table > tbody > tr > td, .bLayoutBlock .pbHeader > table > tbody > tr > td, .bEditBlock .pbBottomButtons > table > tbody > tr > td, .bPageBlock .pbBottomButtons > table > tbody > tr > td, .bLayoutBlock .pbBottomButtons > table > tbody > tr > td {
+    padding: 5px 12px;
+}
+.bPageBlock .pbButton {
+    padding: 1px 0;
+    vertical-align: middle;
+}
+body .bPageBlock .pbBody {
+    padding: 0;
+}
+body .bRelatedList .bPageBlock .pbBody {
+    background-color: #f8f8f8;
+    margin: 6px;
+}
+
+body .bPageBlock .pbFooter {
+    display: none;
+}
+.secondaryPalette, .individualPalette .setupBlock .secondaryPalette {
+    /*background-color: #00655a;
+    border-color: #00655a;*/
+    background-color: #747e96;
+    border-color: #747e96;
+}
+/*
+img, body, html {
+    border: 0 none;    
+}
+body {
+    font-size: 75%;
+}
+select {
+    font-family: "Arial","Helvetica",sans-serif;
+}
+select {
+    color: #000;
+    vertical-align :middle;
+    text-align:left;
+}
+textarea {
+    resize: none;
+}
+textarea {
+    font-family: "Arial","Helvetica",sans-serif;
+    font-size: 100%;
+}
+table td {
+    padding-bottom: 3px;
+    padding-top: 3px;
+}
+.lookupInput {
+    display: inline;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.lookupIconOn {
+    padding-bottom: 1px;
+    vertical-align: middle;
+       margin-right: 0.25em;
+}
+.lookupIcon {
+    background-image: url("/img/func_icons/util/lookup20.gif");
+    background-position: left top;
+    height: 20px;
+    width: 20px;
+}
+
+.datePicker{z-index:100;position:absolute;display:none;top:0;left:0;width:17em;background-color:#b7c6b2;border-bottom:1px solid #000;border-right:1px solid #000;margin:0;padding:1px 1px 2px 2px}.datePicker .dateBar{margin:0;padding:0;text-align:center;white-space:nowrap;overflow:hidden;padding:1px 2px}.datePicker select{vertical-align:top}.datePicker .calBody{border:1px solid #7b829d;border-bottom:none}.datePicker .calDays{font-family:'Verdana','Geneva',sans-serif;font-size:.8em;font-weight:normal;color:#333;width:100%}.datePicker .calDays .prevMonth,.datePicker .calDays .nextMonth{color:#999}.datePicker .calDays th,.datePicker .calDays td{text-align:center;width:14%}.datePicker .calDays .dayOfWeek{background:#ececec url(/img/func_icons/cal/dp_daysbg.gif) repeat-x top;padding:3px 0;border-bottom:1px solid #e0dee0}.datePicker .calDays .weekend,.datePicker .calDays .weekday{border-right:1px solid #e0f0fb;border-bottom:1px solid #e0f0fb;padding:5px 0;cursor:pointer}.datePicker .calDays .weekend{background-color:#f2f3f7}.datePicker .calDays .weekday{background-color:#fff}.datePicker .calDays .dueDate{font-weight:bold;color:#000;background-color:#f10}.datePicker .calDays .todayDate{border:1px solid #000}.datePicker .calDays .startDate,.datePicker .calDays .endDate{text-decoration:underline}.datePicker .calDays .startDate,.datePicker .calDays .endDate,.datePicker .calDays .selectedDate{font-weight:bold;background-color:#fbfae3;color:#000;font-weight:bold}.datePicker .calDays .highlight{background-color:#e0f0fd;color:#000}.datePicker .buttonBar{background-color:#ececec;border-top:1px solid #e1e2e9;padding:2px 0;text-align:center;clear:both}.datePicker .buttonBar .calToday{font-weight:bold;text-decoration:underline;font-size:91%}.datePicker .dateBar .calLeft,.datePicker .dateBar .calLeftOn,.datePicker .dateBar .calRight,.datePicker .dateBar .calRightOn{margin:2px 2px 0 2px}.datePicker .dateBar .calLeft{background-image:url(/img/func_icons/cal/dp_left.gif);background-position:0 0;width:13px;height:21px;background-position:top left}.datePicker .dateBar .calLeftOn{background-image:url(/img/func_icons/cal/dp_left.gif);background-position:0 0;width:13px;height:21px;background-position:top right}.datePicker .dateBar .calRight{background-image:url(/img/func_icons/cal/dp_right.gif);background-position:0 0;width:13px;height:21px;background-position:top left}.datePicker .dateBar .calRightOn{background-image:url(/img/func_icons/cal/dp_right.gif);background-position:0 0;width:13px;height:21px;background-position:top right}.datePicker{width:20em}
+*/

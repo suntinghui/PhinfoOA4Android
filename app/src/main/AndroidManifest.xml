@@ -1,0 +1,837 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.com.phinfo.oaact">
+
+
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- 友盟开始 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- Permission for Unit Test -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 友盟结束 -->
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 极光推送 -->
+    <permission
+        android:name="cn.com.phinfo.oaact.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等 -->
+    <uses-permission android:name="cn.com.phinfo.oaact.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <!-- 极光推送结束 -->
+
+    <application
+        android:name=".MyApplet"
+        android:allowBackup="true"
+        android:icon="@drawable/logo_temp"
+        android:label="@string/app_name"
+        android:theme="@style/Activity_Base"
+        android:usesCleartextTraffic="true">
+
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <activity
+            android:name=".SplashAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateVoteAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".RegisterAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SetGroupUserAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AboutAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".PwdChangeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".WebViewRefreshAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".FindpwdAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchUserAddressAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".SearchChatterAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".MainTabAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ReportDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab1GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateReportAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddGroupNameAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchGroupUsersAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".Tab2GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab3GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ReportAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab4GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab1HomeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectAllGroupUsersAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab2HomeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab3HomeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".Tab4HomeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".HomeCaptureAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ShareDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".PersonPhoto"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".IconMgrAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateCommentAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".PublicShareMsgAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ChangeMobileAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInSettingMoreAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".TodosAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.heqifuhou.imgutils.PhotoAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.heqifuhou.imgutils.PicAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.heqifuhou.imgutils.ImageGridAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.heqifuhou.ioscalendar.CalendarAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.heqifuhou.ioscalendar.HCalendarAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".FriendsAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInBuildingAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SettingAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddSettingAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".EmailListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".TodosDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".TodoTypeListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".TodoRelayAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".TodoTypeDetailListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateTodosAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInBuildingAddAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".LBSBuildingAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectPersonAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base"
+            android:windowSoftInputMode="adjustUnspecified|stateHidden" />
+        <activity
+            android:name=".SelectBaseAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateShareAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectRolesAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectGroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectDepartmentAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressBaseAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressDepartmentAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressGroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".NewsAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddNewsAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Pop" />
+        <activity
+            android:name=".NewsDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CommentAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchNewsAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".SearchReportAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".SearchAddressAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".SearchTodosAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".FileShowAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressGroupContentAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressContactsAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectGroupUsersAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectRolesUsersAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ReportVisibleAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".AddressLocalAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SelectSearchAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".UAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".UMyAwayFileListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".UMyFileListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInWiFiAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".ShareFileAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.album.PickBigImagesAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name="com.album.PickOrTakeImageAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchTodoTypeAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".PersonTabAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MySettingAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchUFileAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".EmailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".SearchEmailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Tran"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+        <activity
+            android:name=".EmailDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateEmailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".URenameAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".UMySelectFileListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base_Pop" />
+        <activity
+            android:name=".UDirCreateAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInAddressAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckInAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".LBSAddressAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".OutCheckInUploadAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingOrderCalendarAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateUFileEmailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".UMyOAFileListAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CreateCalendarAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingOrderCreateAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingOrderDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingCalendarAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingCreateAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingRoomSelectAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".LBSAddressSelectAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CalendarDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingInvitePersonAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingItemAddAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CaptureAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".CheckDialogAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/DialogTransparent" />
+        <activity
+            android:name=".CheckInLBSAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+
+        <!-- 友盟开始 -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="59bea51c9f06fd157e00035a" >
+        </meta-data>
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Umeng" >
+        </meta-data>
+        <!-- 友盟结束 -->
+        <!-- 极光推送开始 -->
+
+
+        <!-- Rich push 核心功能 since 2.0.6 -->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle" >
+        </activity>
+
+        <!-- Required SDK核心功能 -->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="cn.com.phinfo.oaact" />
+            </intent-filter>
+        </activity>
+        <!-- Required  SDK核心功能 -->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <service android:name="com.heqifuhou.update.DownloadServices" />
+        <service android:name="com.heqifuhou.update.DownloadForceServices" />
+        <!-- Required SDK 核心功能 -->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+
+                <category android:name="cn.com.phinfo.oaact" />
+            </intent-filter>
+        </service>
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false" >
+            <intent-filter android:priority="1000" >
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" /> <!-- Required  显示通知栏 -->
+                <category android:name="cn.com.phinfo.oaact" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能 -->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="ac12272cc04a48b4c131e633" /> <!-- </>值来自开发者平台取得的AppKey -->
+        <!-- 极光推送结束 -->
+
+
+        <!-- 百度定位 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" >
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.2" >
+                </action>
+            </intent-filter>
+        </service>
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="Ur6l5ac5MvUCGPrSSmIAjMKXSzyh9Ni8" />
+        <!-- end百度定位 -->
+    </application>
+
+</manifest>

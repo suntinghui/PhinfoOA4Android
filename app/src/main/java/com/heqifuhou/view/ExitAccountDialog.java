@@ -1,0 +1,1 @@
+package com.heqifuhou.view;import android.app.Activity;public class ExitAccountDialog extends ConfirmDialog {	public ExitAccountDialog(Activity act, Object it) {		super(act,"您确定退出账号么?",it);	}}

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/home_item_selector"
+    android:orientation="vertical"
+    android:padding="10dp" >
+
+    <com.heqifuhou.view.CircleImageView
+        android:id="@+id/icon_avatar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center"
+        android:scaleType="center"
+        android:src="@drawable/icon_avatar" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="center_horizontal"
+        android:lines="1"
+        android:textColor="#999999"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="left"
+        android:maxLines="1"
+        android:layout_marginLeft="5dp"
+        android:layout_toLeftOf="@id/date"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/icon_avatar"
+        android:textColor="#333333"
+        android:textSize="14sp" />
+
+</RelativeLayout>

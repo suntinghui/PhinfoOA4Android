@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class RenameFileRun extends QuickRunObjectBase {	public RenameFileRun(final String Id,final String name) {		super(LURLInterface.GET_FILE_RENAME(Id,name));	}}

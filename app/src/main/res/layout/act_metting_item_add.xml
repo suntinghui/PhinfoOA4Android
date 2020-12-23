@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/subject"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="#ffffffff"
+            android:gravity="left|top"
+            android:hint="议题主题"
+            android:minLines="1"
+            android:padding="15dp"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/descripition"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0.5dp"
+            android:background="#ffffffff"
+            android:gravity="left|top"
+            android:hint="议题内容"
+            android:minLines="4"
+            android:padding="15dp"
+            android:textSize="14sp" />
+    </LinearLayout>
+</ScrollView>

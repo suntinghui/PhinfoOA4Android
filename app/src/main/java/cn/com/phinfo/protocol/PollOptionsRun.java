@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class PollOptionsRun extends QuickRunObjectBase {	public PollOptionsRun(final String pollid,final String optionids) {		super(LURLInterface.GET_URL_POLL_RESPONSE(pollid,optionids));	}}

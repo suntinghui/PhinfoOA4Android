@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="yin">#929292</color>
+    <color name="yellow">#F79307</color>
+    <color name="loading_text">#ffffffff</color>
+    <color name="title_yellow">#ED6D00</color>
+    <color name="hint_grey">#c9c9c9</color>
+    
+    <color name="bg_color">#f1f0f5</color> <!-- 每个页面的背景色 -->
+    <color name="white">#ffffff</color>
+    <color name="tx_grey">#9a9a9a</color>
+    <color name="tx_greyer">#7B7B7B</color>
+    <color name="tx_black">#020202</color>
+    
+    <color name="tx_green">#42a401</color>
+    <color name="tx_red">#ff001e</color>
+    
+    <color name="title_grey">#f8f8f8</color>
+    <color name="time_hint">#c8c7cc</color>
+    <color name="re_time_hint">#a6a6a8</color>
+    <color name="re_function_yellow">#f18b3f</color>
+    <color name="re_grey_time">#666666</color>
+    
+    <color name="ge_line">#4a4a4a</color>
+    
+    <color name="af_red">#ffeb413d</color>
+    <color name="af_black">#ff191919</color>
+	<color name="gray_text_color">#ff646464</color>
+</resources>

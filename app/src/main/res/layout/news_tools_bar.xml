@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navtitle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="horizontal" >
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/home_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableTop="@drawable/news_home_btn_selector"
+            android:tag="home_btn"
+            android:text="首页" />
+
+        <RadioButton
+            android:id="@+id/video_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/news_video_btn_selector"
+            android:tag="video_btn"
+            android:text="视频" />
+
+        <RadioButton
+            android:id="@+id/fllow_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/news_fllow_btn_selector"
+            android:tag="fllow_btn"
+            android:text="关注" />
+
+        <RadioButton
+            android:id="@+id/subscribe_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/news_subscribe_btn_selector"
+            android:tag="subscribe_btn"
+            android:text="我的" />
+    </RadioGroup>
+
+</LinearLayout>

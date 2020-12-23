@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/white"
+    android:gravity="center_vertical"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/btnX"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/ic_close" />
+
+    <EditText
+        android:id="@+id/edit"
+        android:background="@drawable/white"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="1dp"
+        android:layout_toLeftOf="@id/btnX"
+        android:gravity="top|left"
+        android:hint="请输入选项..."
+        android:minLines="1"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:textSize="14sp" />
+
+</RelativeLayout>

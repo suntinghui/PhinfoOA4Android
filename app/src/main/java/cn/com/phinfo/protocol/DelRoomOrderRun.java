@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class DelRoomOrderRun extends QuickRunObjectBase {	public DelRoomOrderRun(final String id) {		super(LURLInterface.GET_URL_ROOMORDER_DEL(id));	}}

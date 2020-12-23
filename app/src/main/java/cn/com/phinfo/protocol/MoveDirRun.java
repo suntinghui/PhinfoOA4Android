@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;//移动目录public class MoveDirRun extends QuickRunObjectBase {	public MoveDirRun(final String Id,final String targetFolderId,String ObjectTypeCode) {		super(LURLInterface.GET_DIR_MOVE(Id,targetFolderId,ObjectTypeCode));	}}

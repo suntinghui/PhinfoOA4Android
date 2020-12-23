@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/alert_date_text_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="12"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/alert_china_date_text_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:textSize="8sp" />
+    <ImageView
+        android:id="@+id/alert_date_selected_icon_id"
+        android:layout_width="2dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/calendar_alert_date_background"
+        android:visibility="invisible" />
+
+</LinearLayout>

@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class UploadUrlEmailRun extends QuickRunObjectBase {	public UploadUrlEmailRun(final String mailid,final String fileids) {		super(LURLInterface.GET_URL_UPLOAD_URL_EMAIL(mailid,fileids));	}}

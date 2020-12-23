@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class TransferagentRun extends QuickRunObjectBase {	public TransferagentRun(String instanceName, String processInstanceId, String members, String Message) {		super(LURLInterface.GET_URL_TRANSFERAGENT(instanceName, processInstanceId, members, Message));	}}

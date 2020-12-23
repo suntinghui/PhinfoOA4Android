@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class UDirDelRun extends QuickRunObjectBase {	public UDirDelRun(final String Id) {		super(LURLInterface.GET_DIR_DEL(Id));	}}

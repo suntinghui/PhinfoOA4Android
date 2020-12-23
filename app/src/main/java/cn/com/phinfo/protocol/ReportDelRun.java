@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class ReportDelRun extends QuickRunObjectBase {	public ReportDelRun(final String id) {		super(LURLInterface.GET_URL_REPORT_DEL(id));	}}

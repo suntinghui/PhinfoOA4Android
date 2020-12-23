@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="left|center_vertical"
+    android:clickable="true"
+    android:focusable="true"
+    android:onClick="commonBackButtonOnClick"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/common_header_left_right_padding"
+    android:paddingRight="@dimen/common_header_left_right_padding" >
+
+    <TextView
+        android:id="@+id/common_header_title_left_button"
+        style="@style/common_header_button_style"
+        android:layout_width="20dp"
+        android:layout_gravity="left|center_vertical"
+        android:background="@drawable/nav_arrow"
+        android:onClick="commonBackButtonOnClick" />
+
+</LinearLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ========================[ 公共颜色 ]========================== -->
+    <!-- 公共背景颜色 -->
+    <color name="common_background_color">#E8374A</color> <!-- #FF6535 -->
+    <color name="common_background_color_150">#F9F9F9</color>
+    <!-- 整体背景颜色 -->
+    <color name="common_body_background_color">#F5F5F5</color>
+    <!-- 标题文字颜色 -->
+    <color name="common_title_text_color">#FFF</color>
+    <color name="common_title_text_color_150">#7A7A7A</color>
+    <!-- 按钮文字颜色 -->
+    <color name="common_button_text_color">#FFF</color>
+	<!-- 按钮背景颜色 -->
+	<color name="common_button_background_color_150">#FFB30F</color>
+</resources>

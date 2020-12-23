@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:line="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#f6f6f6"
+    android:orientation="vertical">
+
+    <com.heqifuhou.view.LineEditText
+        android:id="@+id/iptxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/transparency"
+        android:hint="主机(例如:phxinfo.com.cn)"
+        android:minLines="1"
+        android:paddingBottom="10px"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:singleLine="true"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        line:lineColorEt="#b9b9b9" />
+
+    <com.heqifuhou.view.LineEditText
+        xmlns:Android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:background="@drawable/transparency"
+        android:hint="标签可选"
+        android:minLines="1"
+        android:paddingBottom="10px"
+        android:singleLine="true"
+        android:textColor="#333333"
+        android:textSize="14sp"
+        line:lineColorEt="#b9b9b9" />
+
+</LinearLayout>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/navtitle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f2f2f2"
+    android:orientation="horizontal" >
+
+    <RadioGroup
+        android:id="@+id/main_radio"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/check_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableTop="@drawable/ic_check_in_t1_select"
+            android:tag="home_btn"
+            android:text="打卡" />
+
+        <RadioButton
+            android:id="@+id/history_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_check_in_t2_select"
+            android:tag="video_btn"
+            android:text="统计" />
+        <RadioButton
+            android:visibility="gone"
+            android:id="@+id/setting_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/ic_check_in_t3_select"
+            android:tag="video_btn"
+            android:text="设置" />
+    </RadioGroup>
+
+</LinearLayout>

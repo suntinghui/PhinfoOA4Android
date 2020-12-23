@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffffff"
+        android:orientation="horizontal"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp" >
+
+        <RadioButton
+            android:id="@+id/tab1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="会议"
+            android:textColor="@drawable/selector_meeting_detail"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/tab2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-2dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="议题"
+            android:textColor="@drawable/selector_meeting_detail"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/tab3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="-2dp"
+            android:layout_weight="1"
+            android:button="@null"
+            android:gravity="center"
+            android:text="人员"
+            android:textColor="@drawable/selector_meeting_detail"
+            android:textSize="16sp" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/horizontal_line"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_line_selector"
+            android:button="@null" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_line_selector"
+            android:button="@null" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/tab_line_selector"
+            android:button="@null" />
+    </RadioGroup>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/drawable_f2f2f2" >
+
+        <include
+            android:id="@+id/id_for_meeting_detail_r1"
+            layout="@layout/for_meeting_detail_r1" />
+
+        <include
+            android:id="@+id/id_for_meeting_detail_r2"
+            layout="@layout/for_meeting_detail_r2" />
+
+        <include
+            android:id="@+id/id_for_meeting_detail_r3"
+            layout="@layout/for_meeting_detail_r3" />
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>

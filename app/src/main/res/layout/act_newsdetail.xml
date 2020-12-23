@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.heqifuhou.pulltorefresh.PullToRefreshScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollview"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:fillViewport="true"
+    android:scrollbars="none" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:maxLines="2"
+                android:textColor="#333333"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/deptName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/createdOn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:gravity="left"
+                    android:textColor="#999999"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.heqifuhou.view.NoScrollWebView
+            android:id="@+id/webview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/goodCount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_grey_ok"
+                    android:drawableLeft="@drawable/news_good"
+                    android:gravity="center"
+                    android:minWidth="70dp"
+                    android:text="0" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center" >
+
+                <TextView
+                    android:id="@+id/newsDislike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bt_grey_ok"
+                    android:drawableLeft="@drawable/news_dislike"
+                    android:gravity="center"
+                    android:text="不喜欢" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.heqifuhou.view.NoScrollListView
+            android:id="@+id/attacheListView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#E0E0E0"
+            android:dividerHeight="1px"
+            android:scrollbars="none" />
+
+        <com.heqifuhou.view.NoScrollListView
+            android:id="@+id/scrollListView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:divider="#E0E0E0"
+            android:dividerHeight="1px"
+            android:scrollbars="none" />
+
+        <com.heqifuhou.view.NoScrollListView
+            android:id="@+id/refreshListView"
+            android:layout_width="fill_parent"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:divider="#E0E0E0"
+            android:dividerHeight="1px"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+</com.heqifuhou.pulltorefresh.PullToRefreshScrollView>

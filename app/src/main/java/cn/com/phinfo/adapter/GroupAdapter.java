@@ -1,0 +1,1 @@
+package cn.com.phinfo.adapter;import cn.com.phinfo.adapter.base.SelectBaseAdapter;import cn.com.phinfo.protocol.GroupRun.GroupItem;public class GroupAdapter extends SelectBaseAdapter<GroupItem>{	@Override	protected String onGetText(GroupItem it) {		return it.getName();	}}

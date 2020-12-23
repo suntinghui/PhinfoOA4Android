@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class EmailAddStarRun extends QuickRunObjectBase {	public EmailAddStarRun(final String Id) {		super(LURLInterface.GET_EMAIL_ADD(Id));	}	}

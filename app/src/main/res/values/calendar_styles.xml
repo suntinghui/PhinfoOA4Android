@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="weekName">
+        <item name="android:layout_width">0.0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_weight">1.0</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">#666666</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+    
+    
+    
+
+    <!-- ====================[ 公共样式 ]=================== -->
+    <!-- 允许点击 -->
+    <style name="common_onclick">
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+    <!-- 背景颜色 -->
+    <style name="common_background_color">
+        <item name="android:background">@color/common_background_color_150</item>
+    </style>
+    <!-- 背景和字体颜色 -->
+    <style name="common_background_text_color" parent="@style/common_background_color">
+        <item name="android:textColor">@color/common_title_text_color</item>
+    </style>
+    <!-- body 样式 -->
+    <style name="common_body_style">
+        <item name="android:background">@color/common_body_background_color</item>
+    </style>
+    <!-- ====================[ 公共头部 ]==================== -->
+    <!-- 公共头部样式 -->
+    <style name="common_header_style" parent="@style/common_background_color">
+        <item name="android:paddingTop">@dimen/common_header_top_bottom_padding</item>
+        <item name="android:paddingRight">@dimen/common_header_left_right_padding</item>
+        <item name="android:paddingBottom">@dimen/common_header_top_bottom_padding</item>
+    </style>
+        <!-- 公共头部按钮样式 -->
+    <style name="common_header_button_style">
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_height">@dimen/common_header_button_height</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:paddingRight">5dp</item>
+    </style>
+    <!-- 公共头部文字样式 -->
+    <style name="common_header_title_text_style">
+        <item name="android:textColor">@color/common_title_text_color_150</item>
+        <item name="android:textSize">@dimen/common_header_title_text_size</item>
+        <item name="android:height">@dimen/common_header_content_height</item>
+        <item name="android:gravity">center_vertical|center_horizontal</item>
+        <item name="android:layout_gravity">center_vertical|center_horizontal</item>
+    </style>
+
+    <!-- 公共头部标题左侧按钮样式 -->
+    <style name="common_header_title_left_button_tyle" parent="@style/common_header_button_style">
+        <item name="android:background">@drawable/nav_arrow</item>
+    </style>
+    <!-- 公共头部文字样式, 非标题 -->
+    <style name="common_header_text_style" parent="@style/common_header_title_text_style">
+        <item name="android:textSize">@dimen/common_header_text_size</item>
+        <item name="android:background">@color/common_background_color</item>
+    </style>
+    <!-- ===================[ 主体内容样式 ]======================== -->
+    <style name="common_main_content_style">
+        <item name="android:paddingTop">@dimen/common_main_content_top_padding</item>
+    </style>
+</resources>

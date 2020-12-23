@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class EventDetailDelRun extends QuickRunObjectBase {	public EventDetailDelRun(final String id) {		super(LURLInterface.GET_URL_EVENT_DEL(id));	}}

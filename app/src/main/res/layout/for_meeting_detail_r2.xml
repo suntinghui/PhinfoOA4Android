@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <com.heqifuhou.pulltorefresh.PullToRefreshListView
+        android:id="@+id/t2refreshListView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_gravity="center"
+        android:divider="#E0E0E0"
+        android:dividerHeight="1px"
+        android:scrollbars="none" />
+
+</LinearLayout>

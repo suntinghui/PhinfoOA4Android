@@ -1,0 +1,1 @@
+package com.heqifuhou.view;import android.app.Activity;public class ExitDialog extends ConfirmDialog {	public ExitDialog(Activity act, Object it) {		super(act,"您确定注销登陆么?",it);	}}

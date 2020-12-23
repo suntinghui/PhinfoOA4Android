@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;import cn.com.phinfo.protocol.NewsDefaultListRun.NewsResultBean;public class RelatedGetListRun extends QuickRunObjectBase {	public RelatedGetListRun(final String id) {		super(LURLInterface.GET_URL_NEWS_RELATED_GETLIST(id),null,NewsResultBean.class);	}}

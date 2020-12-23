@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.HttpResultBeanBase;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class DoLikeRun extends QuickRunObjectBase {	public DoLikeRun(final String objectid,final String objTypeCode) {		super(LURLInterface.GET_URL_LIKE(objectid,objTypeCode),null,HttpResultBeanBase.class);	}}

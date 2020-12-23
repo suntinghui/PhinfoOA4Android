@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class RenameDirRun extends QuickRunObjectBase {	public RenameDirRun(final String Id,final String name) {		super(LURLInterface.GET_DIR_RENAME(Id,name));	}}

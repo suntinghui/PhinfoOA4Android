@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class ChangMobileRun extends QuickRunObjectBase {	public ChangMobileRun(final String mobileNumber) {		super(LURLInterface.GET_CHANGE_MOBILE(mobileNumber));	}	}

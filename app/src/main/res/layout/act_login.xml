@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:line="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="65dp"
+        android:padding="20dp" >
+
+        <ImageView
+            android:id="@+id/btn_setting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_setting" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <com.heqifuhou.view.CircleImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:scaleType="center"
+            android:src="@drawable/logo_temp" />
+
+        <com.heqifuhou.view.LineEditText
+            android:id="@+id/usr_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/transparency"
+            android:drawableLeft="@drawable/ic_name"
+            android:drawablePadding="20dp"
+            android:hint="请输入账号"
+            android:minLines="1"
+            android:paddingBottom="10px"
+            android:singleLine="true"
+            android:textColor="#333333"
+            android:textSize="14sp"
+            line:lineColorEt="#b9b9b9" />
+
+        <RelativeLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/eye_btn"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/login_btn_eye_hover"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.heqifuhou.view.LineEditText
+                android:id="@+id/usr_pwd_edit"
+                android:layout_toLeftOf="@id/eye_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                
+                android:background="@drawable/transparency"
+                android:drawableLeft="@drawable/ic_pwd"
+                android:hint="请输入密码"
+                android:minLines="1"
+                android:drawablePadding="20dp"
+                android:paddingBottom="10px"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="14sp"
+                line:lineColorEt="#b9b9b9" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:paddingTop="15dp">
+
+            <TextView
+                android:id="@+id/btn"
+                style="@style/blue_btn_style"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="登陆"
+                android:padding="10dp"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="20dp"
+            android:paddingTop="6dp" >
+
+            <TextView
+                android:id="@+id/login_find_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:gravity="left"
+                android:text="忘记了密码"
+                android:textColor="#40b1eb"
+                android:textSize="14dp" />
+
+            <TextView
+                android:id="@+id/btn_server"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:visibility="gone"
+                android:text="试用自定义域"
+                android:textColor="#40b1eb"
+                android:textSize="12dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

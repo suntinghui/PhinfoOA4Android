@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/titleNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f2f2f2"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/titleDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/root_calendar_layout_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:orientation="vertical"
+        android:paddingLeft="18dp"
+        android:paddingRight="18dp" >
+
+        <LinearLayout
+            android:id="@+id/root_week_layout_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp" >
+
+            <TextView
+                style="@style/weekName"
+                android:text="周日"
+                android:textColor="#b1b1b1" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周一" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周二" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周三" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周四" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周五" />
+
+            <TextView
+                style="@style/weekName"
+                android:text="周六"
+                android:textColor="#b1b1b1" />
+        </LinearLayout>
+
+ 
+
+        <ViewFlipper
+            android:id="@+id/flipper"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="#f2f2f2" />
+
+    <ExpandableListView
+        android:id="@+id/service_message_scroll_view_id"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

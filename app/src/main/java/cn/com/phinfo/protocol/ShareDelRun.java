@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class ShareDelRun extends QuickRunObjectBase {	public ShareDelRun(final String id) {		super(LURLInterface.GET_URL_SHARE_DEL(id));	}}

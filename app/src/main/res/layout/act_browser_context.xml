@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_centerHorizontal="true" android:gravity="center"
+	android:layout_width="fill_parent" android:layout_height="fill_parent">
+	<ProgressBar android:id="@+id/title_progress_bar"
+		android:layout_alignParentTop="true"
+		android:layout_width="fill_parent"
+		android:layout_height="1dp"
+		android:progressDrawable="@drawable/progressbarstyle" 
+		android:max="100" android:progress="0"
+		style="?android:attr/progressBarStyleHorizontal">
+	</ProgressBar>
+	<LinearLayout android:id="@+id/browser_center"
+		android:layout_below="@id/title_progress_bar"
+		android:layout_centerInParent="true"
+		android:gravity="center" android:orientation="vertical"
+		android:layout_width="fill_parent" android:layout_height="fill_parent">
+	</LinearLayout>
+		<LinearLayout android:id="@+id/my_form_base_loading"
+		android:visibility="gone" android:layout_centerInParent="true"
+		android:orientation="vertical" android:layout_width="wrap_content"
+		android:gravity="center" android:layout_height="wrap_content">
+		<include layout="@layout/loading_toast" />
+	</LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,2 @@
+include ':app', ':IMLib', ':IMKit'
+rootProject.name = "PhinfoOA4Android"

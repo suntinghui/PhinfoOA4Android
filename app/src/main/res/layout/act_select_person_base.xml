@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/scrollview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical" >
+
+            <com.heqifuhou.sortlistview.ClearEditText
+                android:id="@+id/filter_edit"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dip"
+                android:background="@drawable/search_bar_edit_selector"
+                android:drawableLeft="@drawable/search_bar_icon_normal"
+                android:hint="请输入关键字"
+                android:singleLine="true"
+                android:textColor="#333333"
+                android:textSize="15.0dip" />
+
+            <LinearLayout
+                android:id="@+id/lidepartment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="部门"
+                    android:textColor="#333333"
+                    android:textSize="14sp" />
+
+                <com.heqifuhou.view.NoScrollListView
+                    android:id="@+id/department"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="#E0E0E0"
+                    android:dividerHeight="1px"
+                    android:scrollbars="none" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:id="@+id/lifriends"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" >
+                <com.heqifuhou.pulltorefresh.PullToRefreshListView
+                    android:id="@+id/friendsrefresh"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:divider="#E0E0E0"
+                    android:dividerHeight="1px"
+                    android:scrollbars="none" />
+            </FrameLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

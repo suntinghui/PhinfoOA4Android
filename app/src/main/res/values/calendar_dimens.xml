@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen> -->
+    <!-- =================[ 公共 ]====================== -->
+    <!-- 按钮背景弧度 -->
+    <dimen name="common_button_background_radius">5dp</dimen>
+    <!-- 按钮内边距 -->
+    <dimen name="common_button_padding">15dp</dimen>
+    <!-- 按钮布局上外内距 -->
+    <dimen name="common_button_top_bottom_padding">14dp</dimen>
+
+    <!-- =================[ 公共头部 ]====================== -->
+    <!-- 公共头部内容高度 -->
+	<dimen name="common_header_content_height">30dp</dimen>
+	<!-- 公共头部标题两侧按钮高度 -->
+	<dimen name="common_header_button_height">25dp</dimen>
+	<!-- 公共头部上、下内边距 -->
+	<dimen name="common_header_top_bottom_padding">10dp</dimen>
+	<!-- 公共头部左、右内边距 -->
+	<dimen name="common_header_left_right_padding">18dp</dimen>
+	<!-- 公共头部标题字体大小 -->
+	<dimen name="common_header_title_text_size">20sp</dimen>
+	<!-- 公共头部字体大小 -->
+	<dimen name="common_header_text_size">16sp</dimen>
+
+	<!-- =================[ 公共主体 ]==================== -->
+	<dimen name="common_main_content_top_padding">10dp</dimen>
+</resources>

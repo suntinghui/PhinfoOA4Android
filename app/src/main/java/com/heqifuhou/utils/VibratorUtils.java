@@ -1,0 +1,1 @@
+package com.heqifuhou.utils;import android.app.Service;import android.content.Context;import android.os.Vibrator;public class VibratorUtils {	public static void vibrator(Context context){		Vibrator  mVibrator01 = (Vibrator) context.getSystemService(				Service.VIBRATOR_SERVICE);		mVibrator01.vibrate(new long[] { 100, 10, 100, 1000 }, -1);	}}

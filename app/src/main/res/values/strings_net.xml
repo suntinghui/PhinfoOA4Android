@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 网络 -->
+    <string name="loading_get_err">获取数据失败，请稍后重试，或者手动刷新</string>
+    <string name="loading_connect_err">当前网络不可用，请设置您的网络。</string>
+    <string name="net_setting_txt">去往设置</string>
+    <string name="button_refresh_txt">刷新</string>
+    <string name="mobile_net_txt">现在使用的手机的流量</string>
+</resources>

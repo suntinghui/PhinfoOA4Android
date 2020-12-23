@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class GroupCreateRun extends QuickRunObjectBase {	public GroupCreateRun(final String name) {		super(LURLInterface.GET_GROUP_CREATE(name));	}}

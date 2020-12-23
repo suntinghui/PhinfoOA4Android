@@ -1,0 +1,1 @@
+package cn.com.phinfo.adapter;import cn.com.phinfo.adapter.base.SelectBaseAdapter;import cn.com.phinfo.protocol.RolesRun.RolesItem;public class RolesAdapter extends SelectBaseAdapter<RolesItem>{	@Override	protected String onGetText(RolesItem it) {		return it.getName();	}}

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="found_description_color">#aaaaaa</color>
+    <color name="activity_bg_color">#f5f5f5</color>
+    <color name="color_8f8f8f">#8f8f8f</color>
+    <color name="color_5096cb">#5096cb</color>
+    <color name="transparency">#00000000</color>
+    <!-- tab选中 -->
+    <color name="tab_sel">#37AAD3</color>
+    <!-- tab bg -->
+    <color name="tab_bg">#fafafa</color>
+    <!-- 标题 -->
+    <color name="title_bottom">#DBDBDB</color>
+    <color name="color_90c320">#90c320</color>
+    <color name="black">#000000</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_40b1eb">#40b1eb</color>
+    <color name="list_pressed_bgvolor">#e4e4e4</color>
+    <color name="main_text_color">#333333</color>
+    <color name="sub_text_color">#999999</color>
+    <color name="color_e7e7e7">#e7e7e7</color>
+    <color name="color_90c221">#90c221</color>
+    <color name="gray_border_color">#ededed</color>
+    <color name="focus_text_color">#f39700</color>
+    <color name="viewfinder_frame">#1874CD</color>
+    <color name="viewfinder_laser">#1874CD</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="result_view">#1C86EE</color>
+    <color name="possible_result_points">#1874CD</color>
+    <color name="blue">#1DABE4</color>
+    
+
+    <!-- 字体灰色 -->
+    <color name="TextColorGray">#808080</color>
+    <!-- 主题紫红色字颜色 -->
+    <color name="text_value_common">#00ffffff</color>
+
+</resources>

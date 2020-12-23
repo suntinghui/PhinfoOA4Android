@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/white"
+    android:padding="5dp">
+
+    <EditText
+        android:id="@+id/edit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white"
+        android:hint="分享新鲜消息..."
+        android:gravity="top|left"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textCursorDrawable="@null"
+        android:minLines="10" />
+
+    <LinearLayout
+        android:id="@+id/liLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+</LinearLayout>

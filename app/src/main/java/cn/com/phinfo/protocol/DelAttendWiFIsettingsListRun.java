@@ -1,0 +1,1 @@
+package cn.com.phinfo.protocol;import com.heqifuhou.protocolbase.QuickRunObjectBase;public class DelAttendWiFIsettingsListRun extends QuickRunObjectBase {	public DelAttendWiFIsettingsListRun(String id) {		super(LURLInterface.GET_INFO_DEL_WIFI(id));	}}

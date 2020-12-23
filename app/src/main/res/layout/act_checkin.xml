@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical" >
+
+    <include
+        android:id="@+id/id_r1_checkin"
+        layout="@layout/r1_checkin_layout" />
+    <include
+        android:id="@+id/id_r2_checkin"
+        layout="@layout/r2_checkin_layout" />
+   <include
+        android:id="@+id/id_r3_checkin"
+        layout="@layout/r3_checkin_layout" />
+</LinearLayout>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="horizontal" >
+
+    <RadioGroup
+        android:id="@+id/raidogroup"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/home_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:checked="true"
+            android:drawableTop="@drawable/tab2_selector"
+            android:tag="home_btn"
+            android:text="报告" />
+
+        <ImageView
+            android:id="@+id/my_add"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:src="@drawable/ic_add" />
+
+        <RadioButton
+            android:id="@+id/my_btn"
+            style="@style/main_tab_bottom"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/tab4_selector"
+            android:tag="my_btn"
+            android:text="我的" />
+    </RadioGroup>
+
+</LinearLayout>
