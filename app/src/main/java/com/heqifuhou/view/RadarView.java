@@ -10,9 +10,10 @@ import android.graphics.Shader;
 import android.graphics.SweepGradient;
 import android.os.Handler;
 import android.os.Message;
-import android.support.annotation.IntDef;
 import android.util.AttributeSet;
 import android.view.View;
+
+import androidx.annotation.IntDef;
 
 public class RadarView extends View {
 	private int viewSize = 1;

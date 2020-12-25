@@ -1,5 +1,26 @@
 package cn.com.phinfo.oaact;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.http.SslError;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.ViewGroup;
+import android.view.ViewGroup.LayoutParams;
+import android.webkit.HttpAuthHandler;
+import android.webkit.SslErrorHandler;
+import android.webkit.WebView;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
 import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.HttpLoginMyActBase;
 import com.heqifuhou.actbase.IBroadcastAction;
@@ -21,42 +42,19 @@ import com.heqifuhou.view.EditDialog.OnDialogEditOKListener;
 import com.heqifuhou.view.PopupWindows;
 import com.heqifuhou.view.PopupWindows.OnPopupWindowsItemListener;
 
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.net.http.SslError;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.view.ViewGroup;
-import android.view.ViewGroup.LayoutParams;
-import android.webkit.HttpAuthHandler;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebView;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.adapter.FileAttacheAdapter;
 import cn.com.phinfo.protocol.AttacheFileRun;
 import cn.com.phinfo.protocol.AttacheFileRun.AttacheFileItem;
 import cn.com.phinfo.protocol.AttacheFileRun.AttacheFileResultBean;
 import cn.com.phinfo.protocol.CancelSubmitRun;
 import cn.com.phinfo.protocol.LURLInterface;
-import cn.com.phinfo.protocol.NotifyReadRun;
 import cn.com.phinfo.protocol.PushMessageRun;
 import cn.com.phinfo.protocol.TodosRun.TodosItem;
 import cn.com.phinfo.view.TodosPopMenu;
-import cn.com.phinfo.view.TodosPopMenu.OnDialogTodoOKListener;
 
 //表单
-public class TodosDetailAct extends HttpLoginMyActBase implements OnPageChangeListener, OnItemClickListener,
+public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPageChangeListener, OnItemClickListener,
 		OnCheckedChangeListener, OnRefreshListener<MyWebView>, INetWebViewClient, INetWebChromeClient {
 	private static int ID_CANCEL = 0x10, ID_PUSHMSG = 0x12, ID_Attach = 0x13, ID_FORM = 0x14,ID_NOTIFY_READ=0x15,ID_transferagent=0x16;
 	private TodosItem it;

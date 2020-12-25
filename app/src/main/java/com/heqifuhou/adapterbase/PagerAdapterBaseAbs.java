@@ -1,7 +1,7 @@
 package com.heqifuhou.adapterbase;
 
-import java.util.Comparator;
-import java.util.List;
+import android.database.DataSetObserver;
+import android.widget.ImageView;
 
 import com.heqifuhou.adapterbase.base.AdapterListBase;
 import com.heqifuhou.adapterbase.base.AdapterListBase.OnNotifyDataSetChanged;
@@ -10,9 +10,10 @@ import com.heqifuhou.adapterbase.base.IAdapterListBase;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
-import android.database.DataSetObserver;
-import android.support.v4.view.PagerAdapter;
-import android.widget.ImageView;
+import java.util.Comparator;
+import java.util.List;
+
+import androidx.viewpager.widget.PagerAdapter;
 import cn.com.phinfo.oaact.R;
 
 public abstract class PagerAdapterBaseAbs<E> extends PagerAdapter implements

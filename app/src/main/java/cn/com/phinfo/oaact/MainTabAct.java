@@ -1,19 +1,25 @@
 package cn.com.phinfo.oaact;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 import cn.com.phinfo.entity.DataInstance;
 import cn.com.phinfo.protocol.SysUpdateRun;
 import cn.com.phinfo.protocol.SysUpdateRun.AppDownLoadResultBean;
+import pub.devrel.easypermissions.AfterPermissionGranted;
+import pub.devrel.easypermissions.EasyPermissions;
 
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.protocolbase.HttpResultBeanBase;
@@ -92,6 +98,9 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 					}
 				});
 		DonloadForceUtils.getInstance(this).registerDonloadServer();
+
+		this.methodRequiresTwoPermission();
+
 	}
 
 	@Override
@@ -222,5 +231,29 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 			IThreadResultListener listener, Object requestObj, boolean isRecy) {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+
+		// Forward results to EasyPermissions
+		EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this);
+	}
+
+	private static final int RC_WRITE_EXTERNAL_STORAGE = 100;
+
+	@AfterPermissionGranted(RC_WRITE_EXTERNAL_STORAGE)
+	private void methodRequiresTwoPermission() {
+		String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+		if (EasyPermissions.hasPermissions(this, perms)) {
+			// Already have permission, do the thing
+			//表明已经授权，可以进行用户授予权限的操作
+		} else {
+			// Do not have permissions, request them now
+			//弹出一个对话框进行提示用户
+			EasyPermissions.requestPermissions(this, "查询附件需要读写文件权限，拒绝后无法查看附件", RC_WRITE_EXTERNAL_STORAGE, perms);
+
+		}
 	}
 }

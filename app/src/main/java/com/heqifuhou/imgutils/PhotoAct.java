@@ -10,8 +10,6 @@ import com.heqifuhou.view.PopupDialog.OnDialogItemListener;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.View.OnLongClickListener;
@@ -20,6 +18,8 @@ import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+
+import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.oaact.R;
 
 //查看已选择照片
@@ -71,7 +71,7 @@ public class PhotoAct extends MyActBase {
 		adapter.notifyDataSetChanged();
 	}
 
-	private final OnPageChangeListener pageChangeListener = new OnPageChangeListener() {
+	private final ViewPager.OnPageChangeListener pageChangeListener = new ViewPager.OnPageChangeListener() {
 		public void onPageSelected(int arg0) {// 页面选择响应函数
 			indexPager = arg0;
 			selPoint();

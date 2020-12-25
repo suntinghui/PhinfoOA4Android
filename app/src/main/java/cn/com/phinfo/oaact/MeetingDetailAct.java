@@ -7,8 +7,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -19,6 +17,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.adapter.DefCommentAdapter;
 import cn.com.phinfo.adapter.MeetingItemAdapter;
 import cn.com.phinfo.adapter.MeetingPeoplesAdapter;
@@ -56,7 +56,7 @@ import com.heqifuhou.view.CircleImageView;
 import com.heqifuhou.view.NoScrollListView;
 
 public class MeetingDetailAct extends HttpLoginMyActBase implements
-		OnCheckedChangeListener, OnPageChangeListener,OnItemClickListener {
+		OnCheckedChangeListener, ViewPager.OnPageChangeListener,OnItemClickListener {
 	private static final int PERPAGE_SIZE = 15;
 	private static final int ID_GETLIST = 0x10,ID_TAB1=0x11,ID_GETCOMMENT=0x12,ID_NEWS_ADD=0x13
 			,ID_T3T1 = 0x14,ID_T3T2 = 0x15,ID_T3T3 = 0x16,ID_T3T4=0x17,ID_MEETING_ITEM = 0x18;

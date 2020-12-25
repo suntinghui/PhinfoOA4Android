@@ -3,6 +3,7 @@ package cn.com.phinfo.oaact;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 
 import com.baidu.mapapi.SDKInitializer;
 import com.heqifuhou.actbase.IBroadcastAction;
@@ -10,6 +11,7 @@ import com.nostra13.universalimageloader.cache.disc.naming.Md5FileNameGenerator;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
+import com.tencent.smtt.sdk.QbSdk;
 
 public class MyApplet extends  Application implements Thread.UncaughtExceptionHandler{
 	private static MyApplet instance = null;
@@ -18,6 +20,10 @@ public class MyApplet extends  Application implements Thread.UncaughtExceptionHa
 		super.onCreate();
 		instance = this;
 		initImageLoader(getApplicationContext());
+
+		this.initQb();
+
+
 //        JPushInterface.setDebugMode(true);
 //        JPushInterface.init(this);
 //        JPushInterface.setLatestNotificationNumber(getApplicationContext(),1);
@@ -47,6 +53,27 @@ public class MyApplet extends  Application implements Thread.UncaughtExceptionHa
 	// /////////////////////////////////////////////////////
 	public static MyApplet getInstance() {
 		return instance;
+	}
+
+	private void initQb() {
+		//搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
+
+		QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
+
+			@Override
+			public void onViewInitFinished(boolean arg0) {
+				// TODO Auto-generated method stub
+				//x5內核初始化完成的回调，为true表示x5内核加载成功，否则表示x5内核加载失败，会自动切换到系统内核。
+				Log.d("app", " onViewInitFinished is " + arg0);
+			}
+
+			@Override
+			public void onCoreInitFinished() {
+				// TODO Auto-generated method stub
+			}
+		};
+		//x5内核初始化接口
+		QbSdk.initX5Environment(getApplicationContext(),  cb);
 	}
 
 

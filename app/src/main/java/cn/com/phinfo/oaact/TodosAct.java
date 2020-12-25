@@ -1,5 +1,16 @@
 package cn.com.phinfo.oaact;
 
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.RadioGroup.OnCheckedChangeListener;
+
 import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.HttpLoginMyActBase;
 import com.heqifuhou.actbase.IBroadcastAction;
@@ -10,18 +21,7 @@ import com.heqifuhou.pulltorefresh.PullToRefreshBase.Mode;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.OnRefreshListener2;
 import com.heqifuhou.pulltorefresh.PullToRefreshListView;
 
-import android.content.Context;
-import android.content.Intent;
-import android.os.Bundle;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.RadioGroup.OnCheckedChangeListener;
+import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.adapter.TodosAdapter;
 import cn.com.phinfo.protocol.TodosRun;
 import cn.com.phinfo.protocol.TodosRun.TodosItem;
@@ -29,7 +29,7 @@ import cn.com.phinfo.protocol.TodosRun.TodosResultBean;
 
 //待办
 public class TodosAct extends HttpLoginMyActBase
-		implements OnPageChangeListener, OnItemClickListener, OnCheckedChangeListener {
+		implements ViewPager.OnPageChangeListener, OnItemClickListener, OnCheckedChangeListener {
 	private static int PERPAGE_SIZE = 15;
 	private ViewPager viewPager;
 	private RadioButton[] rbtn = new RadioButton[4];

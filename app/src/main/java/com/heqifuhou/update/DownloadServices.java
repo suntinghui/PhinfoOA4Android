@@ -184,7 +184,7 @@ public class DownloadServices extends Service {
 			case DOWN_ERR:
 				removeMessages(DOWN_LOADING);
 				map_downloadtask.remove(((DownloadTask) msg.obj).getUrl());
-				Toast.makeText(mContext, "下载失败", Toast.LENGTH_SHORT).show();
+				Toast.makeText(mContext, "7下载失败", Toast.LENGTH_SHORT).show();
 				stopService();
 				break;
 			default:

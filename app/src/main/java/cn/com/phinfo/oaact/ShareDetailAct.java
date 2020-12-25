@@ -5,9 +5,6 @@ import java.util.List;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -20,6 +17,9 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RadioGroup.OnCheckedChangeListener;
 import android.widget.TextView;
+
+import androidx.viewpager.widget.PagerAdapter;
+import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.adapter.LikeAdapter;
 import cn.com.phinfo.adapter.MyQThumbnailAdapter;
 import cn.com.phinfo.adapter.ReportShareCommentAdapter;
@@ -53,7 +53,7 @@ import com.heqifuhou.view.PopupWindows.OnPopupWindowsItemListener;
 
 //分享详情
 public class ShareDetailAct extends HttpMyActBase implements
-		OnItemClickListener, OnCheckedChangeListener, OnPageChangeListener {
+		OnItemClickListener, OnCheckedChangeListener, ViewPager.OnPageChangeListener {
 	private static int ID_GETLIST = 0x10, ID_COMMENT = 0x11, ID_LIKE = 0x12,ID_LIKE_LIST = 0x13,
 			ID_DEL_SHARE = 0x14,ID_SEND_NEW=0x15;
 	private int page1 = 1, page2 = 1, page3 = 1;

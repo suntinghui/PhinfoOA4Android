@@ -28,6 +28,8 @@
     <color name="result_view">#1C86EE</color>
     <color name="possible_result_points">#1874CD</color>
     <color name="blue">#1DABE4</color>
+
+    <color name="dark_gray_bg">#F5F5F5</color>
     
 
     <!-- 字体灰色 -->

@@ -49,6 +49,7 @@ public class SplashAct extends HttpLoginMyActBase {
 //		this.startActivity(intent);
 		
 	}
+
 	protected void onActivityLoginOkResult(Object data) {
 		super.onActivityLoginOkResult(data);
 		//登陆成功关闭当前页面

@@ -3,6 +3,7 @@ package cn.com.phinfo.oaact;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -37,6 +38,7 @@ import com.heqifuhou.pulltorefresh.PullToRefreshBase;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.Mode;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.OnRefreshListener;
 import com.heqifuhou.pulltorefresh.PullToRefreshScrollView;
+import com.heqifuhou.utils.FileUtils;
 import com.heqifuhou.view.NoScrollListView;
 
 public class NewsDetailAct extends HttpMyActBase implements OnClickListener, OnItemClickListener {
@@ -271,11 +273,26 @@ public class NewsDetailAct extends HttpMyActBase implements OnClickListener, OnI
 		}
 		// 附件
 		if (arg0.getAdapter() == newattacheAdapter) {
+
+/**
 			AttacheFileItem attacheItem = newattacheAdapter.getItem(arg2);
 			Intent intent = new Intent(this, FileShowAct.class);
 			intent.putExtra("AttacheFileItem", JSON.toJSONString(attacheItem));
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+ **/
+
+/**
+			AttacheFileItem attacheItem = newattacheAdapter.getItem(arg2);
+			Log.e("yao", JSON.toJSONString(attacheItem));
+//			Log.e("yao", attacheItem.getLink());
+			FileDisplayActivity.actionStart(NewsDetailAct.this, attacheItem.getLink(),attacheItem.getName()+"."+attacheItem.getFileExtension());
+//			FileDisplayActivity.actionStart(NewsDetailAct.this,"http://res.cfastech.com/textdoc.docx","yao");
+**/
+			AttacheFileItem attacheItem = newattacheAdapter.getItem(arg2);
+			FileUtils.downloadAndOpenFile(NewsDetailAct.this, attacheItem.getLink(), attacheItem.getName()+"."+attacheItem.getFileExtension());
+
+
 		}
 
 	}
