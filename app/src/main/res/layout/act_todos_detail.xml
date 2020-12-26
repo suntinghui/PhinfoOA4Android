@@ -5,7 +5,7 @@
     android:background="#ffffffff"
     android:orientation="vertical" >
 
-    <android.support.v4.view.ViewPager
+    <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -113,6 +113,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical" >
         </LinearLayout>
-    </android.support.v4.view.ViewPager>
+    </androidx.viewpager.widget.ViewPager>
 
 </LinearLayout>

@@ -1,9 +1,12 @@
 package com.heqifuhou.utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Environment;
+import android.util.Log;
 import android.widget.Toast;
 
+import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.MyActBase;
 import com.heqifuhou.view.PopupDialog;
 import com.liulishuo.filedownloader.BaseDownloadTask;
@@ -12,16 +15,35 @@ import com.liulishuo.filedownloader.FileDownloader;
 import com.tencent.smtt.sdk.QbSdk;
 import com.tencent.smtt.sdk.ValueCallback;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.io.File;
 import java.util.HashMap;
 
+import cn.com.phinfo.oaact.FileShowAct;
+import cn.com.phinfo.protocol.AttacheFileRun;
 import cn.pedant.SweetAlert.SweetAlertDialog;
 
 public class FileUtils {
 
-    public static void downloadAndOpenFile(MyActBase ctx, String url, String fileName) {
+    public static void downloadAndOpenFile(MyActBase ctx, @NotNull AttacheFileRun.AttacheFileItem item) {
+        String suffix = item.getFileExtension();
+        if (suffix.equalsIgnoreCase("jpg") || suffix.equalsIgnoreCase("png") || suffix.equalsIgnoreCase("jpeg") || suffix.equalsIgnoreCase("gif") || suffix.equalsIgnoreCase("bmp") ) {
+            openImg(ctx, item);
+        } else {
+            openOtherFiles(ctx, item.getLink(), item.getName()+"."+item.getFileExtension());
+        }
+    }
 
+    // 图片单独打开
+    public static void openImg(MyActBase ctx, AttacheFileRun.AttacheFileItem item) {
+        Intent intent = new Intent(ctx, FileShowAct.class);
+        intent.putExtra("AttacheFileItem", JSON.toJSONString(item));
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        ctx.startActivity(intent);
+    }
 
+    public static void openOtherFiles(MyActBase ctx, String url, String fileName) {
         File file = new File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), fileName);
         String path = file.getPath();
 
@@ -50,8 +72,9 @@ public class FileUtils {
                         ctx.hideLoading();
 
                         int openType = FileUtils.openFile(ctx, path);
+                        Log.e("yao9", openType+"");
 
-                        if (openType == 2 || openType == 3) {
+                        if (openType == 3) {
                             FileUtils.popUpdateTips(ctx);
                         }
 
@@ -67,7 +90,6 @@ public class FileUtils {
 
                     }
                 }).start();
-
     }
 
     public static int openFile(MyActBase ctx, String path) {
@@ -81,18 +103,31 @@ public class FileUtils {
         int type = QbSdk.openFileReader(ctx, path, params, new ValueCallback<String>() {
             @Override
             public void onReceiveValue(String s) {
+                Log.e("yao8",s);
             }
         });
 
+        /**
+         * 1：用 QQ 浏览器打开
+         * 2：用 MiniQB 打开
+         * 3：调起阅读器弹框
+         * -1：filePath 为空 打开失败
+         */
         return type;
     }
 
     public static void popUpdateTips(MyActBase ctx) {
-        new SweetAlertDialog(ctx, SweetAlertDialog.WARNING_TYPE)
-                .setTitleText("提示")
-                .setContentText("为了支持更多类型文件，强烈建议您安装QQ浏览器")
-                .setConfirmText("知道了")
-                .show();
+        try {
+            new SweetAlertDialog(ctx, SweetAlertDialog.WARNING_TYPE)
+                    .setTitleText("温馨提示")
+                    .setContentText("预览文件需要QQ浏览器内核支持，强烈建议您安装QQ浏览器")
+                    .setConfirmText("知道了")
+                    .show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+
 
 }

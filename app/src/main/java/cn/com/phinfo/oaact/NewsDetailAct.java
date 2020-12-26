@@ -290,8 +290,8 @@ public class NewsDetailAct extends HttpMyActBase implements OnClickListener, OnI
 //			FileDisplayActivity.actionStart(NewsDetailAct.this,"http://res.cfastech.com/textdoc.docx","yao");
 **/
 			AttacheFileItem attacheItem = newattacheAdapter.getItem(arg2);
-			FileUtils.downloadAndOpenFile(NewsDetailAct.this, attacheItem.getLink(), attacheItem.getName()+"."+attacheItem.getFileExtension());
-
+			Log.e("yao", JSON.toJSONString(attacheItem));
+			FileUtils.downloadAndOpenFile(NewsDetailAct.this, attacheItem);
 
 		}
 

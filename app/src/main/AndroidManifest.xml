@@ -95,7 +95,8 @@
         android:label="@string/app_name"
         android:theme="@style/Activity_Base"
         android:usesCleartextTraffic="true"
-        tools:replace="android:icon">
+        tools:replace="android:icon"
+        android:requestLegacyExternalStorage="true">
 
         <uses-library android:name="org.apache.http.legacy" android:required="false"/>
 
@@ -761,12 +762,22 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="${applicationId}"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provide_file_paths"/>
+        </provider>
+
+        <provider
+            android:name="com.tencent.smtt.utils.FileProvider"
+            android:authorities="包名.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provide_file_paths" />
         </provider>
 
     </application>
