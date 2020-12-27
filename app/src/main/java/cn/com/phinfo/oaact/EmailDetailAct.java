@@ -2,6 +2,7 @@ package cn.com.phinfo.oaact;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.webkit.WebView;
@@ -28,6 +29,7 @@ import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.HttpMyActBase;
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.protocolbase.HttpResultBeanBase;
+import com.heqifuhou.utils.FileUtils;
 import com.heqifuhou.view.NoScrollListView;
 import com.heqifuhou.view.PopupWindows;
 import com.heqifuhou.view.PopupWindows.OnPopupWindowsItemListener;
@@ -126,11 +128,18 @@ public class EmailDetailAct extends HttpMyActBase implements
 			return;
 		}
 		if(arg0.getAdapter() == adapterEmailFileAttach){
+			/**
 			AttacheFileItem attacheItem = adapterEmailFileAttach.getItem(arg2);
 			Intent intent = new Intent(this, FileShowAct.class);
 			intent.putExtra("AttacheFileItem", JSON.toJSONString(attacheItem));
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			 **/
+
+			AttacheFileItem attacheItem = adapterEmailFileAttach.getItem(arg2);
+			Log.e("yao", JSON.toJSONString(attacheItem));
+			FileUtils.downloadAndOpenFile(this, attacheItem);
+			
 			return;
 		}
 	}

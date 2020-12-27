@@ -2,9 +2,11 @@ package cn.com.phinfo.oaact;
 
 import com.alibaba.fastjson.JSON;
 import com.heqifuhou.pulltorefresh.PullToRefreshListView;
+import com.heqifuhou.utils.FileUtils;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -42,11 +44,17 @@ public class UMyOAFileListAct extends UMyCanMoveFileListBaseAct {
 			intent.putExtra("folderid", it.getId());
 			this.startActivity(intent);
 		} else {
+			/***
 			Intent intent = new Intent(this, FileShowAct.class);
 			intent.putExtra("AttacheFileItem",
 					JSON.toJSONString(AttacheFileItem.init(it)));
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			***/
+
+			AttacheFileItem attacheItem = AttacheFileItem.init(it);
+			Log.e("yao", JSON.toJSONString(attacheItem));
+			FileUtils.downloadAndOpenFile(this, attacheItem);
 		}
 	}
 	

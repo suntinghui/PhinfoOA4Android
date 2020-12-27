@@ -3,6 +3,7 @@ package cn.com.phinfo.oaact.base;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -32,6 +33,7 @@ import com.heqifuhou.pulltorefresh.PullToRefreshBase;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.Mode;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.OnRefreshListener2;
 import com.heqifuhou.pulltorefresh.PullToRefreshListView;
+import com.heqifuhou.utils.FileUtils;
 import com.heqifuhou.utils.ParamsCheckUtils;
 import com.heqifuhou.view.ConfirmDialog;
 import com.heqifuhou.view.ConfirmDialog.OnDialogOKListener;
@@ -244,11 +246,19 @@ public abstract class UMyFileListBaseAct extends HttpMyActBase implements
 			intent.putExtra("folderid", it.getId());
 			this.startActivity(intent);
 		} else {
+			/**
 			Intent intent = new Intent(this, FileShowAct.class);
 			intent.putExtra("AttacheFileItem",
 					JSON.toJSONString(AttacheFileItem.init(it)));
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
+			 **/
+
+			AttacheFileItem attacheItem = AttacheFileItem.init(it);
+			Log.e("yao", JSON.toJSONString(attacheItem));
+			FileUtils.downloadAndOpenFile(this, attacheItem);
+
+
 		}
 	}
 

@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -25,6 +26,7 @@ import com.heqifuhou.imgutils.BitmapDataListInstanceUtils;
 import com.heqifuhou.imgutils.FileItem;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.Mode;
 import com.heqifuhou.pulltorefresh.PullToRefreshListView;
+import com.heqifuhou.utils.FileUtils;
 import com.heqifuhou.utils.TakePhotosUtils;
 import com.heqifuhou.view.PopupWindows;
 import com.heqifuhou.view.PopupWindows.OnPopupWindowsItemListener;
@@ -224,11 +226,17 @@ public class UMyFileListAct extends UMyCanMoveFileListBaseAct {
 				intent.putExtra("folderid", it.getId());
 				this.startActivity(intent);
 			} else {
+				/**
 				Intent intent = new Intent(this, FileShowAct.class);
 				intent.putExtra("AttacheFileItem",
 						JSON.toJSONString(AttacheFileItem.init(it)));
 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
+				 **/
+
+				AttacheFileItem attacheItem = AttacheFileItem.init(it);
+				Log.e("yao", JSON.toJSONString(attacheItem));
+				FileUtils.downloadAndOpenFile(this, attacheItem);
 			}
 		}
 	}

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -34,6 +35,7 @@ import com.heqifuhou.pulltorefresh.PullToRefreshBase;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.Mode;
 import com.heqifuhou.pulltorefresh.PullToRefreshBase.OnRefreshListener;
 import com.heqifuhou.pulltorefresh.PullToRefreshMyWebView;
+import com.heqifuhou.utils.FileUtils;
 import com.heqifuhou.utils.ParamsCheckUtils;
 import com.heqifuhou.view.ConfirmDialog;
 import com.heqifuhou.view.ConfirmDialog.OnDialogOKListener;
@@ -312,10 +314,14 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 			public void onPopupWindowsItem(int pos) {
 				if (pos == 0) {
 					// 查看
+					/**
 					Intent intent = new Intent(TodosDetailAct.this, FileShowAct.class);
 					intent.putExtra("AttacheFileItem", JSON.toJSONString(attacheItem));
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
+					 **/
+					Log.e("yao", JSON.toJSONString(attacheItem));
+					FileUtils.downloadAndOpenFile(TodosDetailAct.this, attacheItem);
 
 				} else if (pos == 1) {
 					// 下载

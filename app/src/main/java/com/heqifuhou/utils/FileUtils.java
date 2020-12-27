@@ -37,10 +37,13 @@ public class FileUtils {
 
     // 图片单独打开
     public static void openImg(MyActBase ctx, AttacheFileRun.AttacheFileItem item) {
+        /**
         Intent intent = new Intent(ctx, FileShowAct.class);
         intent.putExtra("AttacheFileItem", JSON.toJSONString(item));
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         ctx.startActivity(intent);
+         **/
+        
     }
 
     public static void openOtherFiles(MyActBase ctx, String url, String fileName) {
