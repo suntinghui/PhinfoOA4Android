@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.TimeZone;
 
+import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.imgutils.BitmapDataListInstanceUtils;
 import com.heqifuhou.imgutils.FileItem;
@@ -33,6 +34,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;

@@ -75,7 +75,6 @@ public class FileUtils {
                         ctx.hideLoading();
 
                         int openType = FileUtils.openFile(ctx, path);
-                        Log.e("yao9", openType+"");
 
                         if (openType == 3) {
                             FileUtils.popUpdateTips(ctx);
@@ -106,7 +105,6 @@ public class FileUtils {
         int type = QbSdk.openFileReader(ctx, path, params, new ValueCallback<String>() {
             @Override
             public void onReceiveValue(String s) {
-                Log.e("yao8",s);
             }
         });
 

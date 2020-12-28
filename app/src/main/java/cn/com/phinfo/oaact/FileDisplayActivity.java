@@ -158,8 +158,6 @@ public class FileDisplayActivity extends Activity implements ReaderCallback,
      * 加载显示文件内容
      */
     private void displayFile() {
-        Log.e("yao2", getLocalFile().getPath());
-        Log.e("yao3", mFileName);
 
         Bundle bundle = new Bundle();
         bundle.putString("filePath", getLocalFile().getPath());

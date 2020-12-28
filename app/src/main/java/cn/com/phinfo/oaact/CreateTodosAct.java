@@ -18,6 +18,7 @@ import com.umeng.analytics.MobclickAgent;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
@@ -244,7 +245,9 @@ public class CreateTodosAct extends MyBaseBitmapAct {
 		for (int i = 0; i < lst.size(); i++) {
 			FilePickerItem it = lst.get(i);
 			String key = new String("Attache[]");
+
 			File f  = new File(it.getFilePicker());
+
 			has.put(key, f);
 		}
 		return true;

@@ -137,7 +137,6 @@ public class EmailDetailAct extends HttpMyActBase implements
 			 **/
 
 			AttacheFileItem attacheItem = adapterEmailFileAttach.getItem(arg2);
-			Log.e("yao", JSON.toJSONString(attacheItem));
 			FileUtils.downloadAndOpenFile(this, attacheItem);
 			
 			return;

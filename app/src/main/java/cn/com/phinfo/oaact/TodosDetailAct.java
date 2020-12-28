@@ -320,7 +320,6 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 					intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 					startActivity(intent);
 					 **/
-					Log.e("yao", JSON.toJSONString(attacheItem));
 					FileUtils.downloadAndOpenFile(TodosDetailAct.this, attacheItem);
 
 				} else if (pos == 1) {

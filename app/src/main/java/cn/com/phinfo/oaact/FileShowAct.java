@@ -50,10 +50,8 @@ public class FileShowAct extends HttpMyActBase implements OnClickListener, TbsRe
 		mTbsReaderView = new TbsReaderView(this, this);
 
 		String s = this.getIntent().getExtras().getString("AttacheFileItem");
-		Log.e("yao4", s);
 		if (!ParamsCheckUtils.isNull(s)) {
 			item = JSON.parseObject(s, FileItem.class);
-			Log.e("yao5", JSON.toJSONString(item));
 		}
 		this.addTextNav("文件查看详情");
 		this.addViewFillInRoot(R.layout.act_fileshow);
@@ -287,7 +285,6 @@ public class FileShowAct extends HttpMyActBase implements OnClickListener, TbsRe
 
 				@Override
 				public void onFailure(HttpException error, String msg) {
-					Log.e("yao", msg);
 					showToast("下载失败");
 					showError();
 				}

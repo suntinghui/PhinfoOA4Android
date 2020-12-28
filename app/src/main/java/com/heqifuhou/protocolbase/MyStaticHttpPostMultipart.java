@@ -1,5 +1,7 @@
 package com.heqifuhou.protocolbase;
 
+import android.util.Log;
+
 import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -16,6 +18,7 @@ import org.apache.http.entity.mime.content.StringBody;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.protocol.HTTP;
 
+import com.alibaba.fastjson.JSON;
 import com.heqifuhou.netbase.MyHttpPost;
 import com.heqifuhou.utils.ParamsCheckUtils;
 
@@ -53,8 +56,9 @@ public class MyStaticHttpPostMultipart {
 	}
 	public static byte[] postFileAndText(final String hostURL,
 			final Map<String, Object> part, final Map<String, Object> file) {
-		MultipartEntity reqEntity = new MultipartEntity(
-				HttpMultipartMode.BROWSER_COMPATIBLE);
+		//MultipartEntity reqEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE);
+		Log.e("yao1", "yao1");
+		MultipartEntity reqEntity = new MultipartEntity(HttpMultipartMode.BROWSER_COMPATIBLE, null,Charset.forName("UTF-8"));
 		if(part!=null){
 			addMultipart(reqEntity,part,"");
 //			for (Map.Entry<String, Object> entry : part.entrySet()) {
@@ -74,6 +78,7 @@ public class MyStaticHttpPostMultipart {
 				if(entry.getValue() instanceof File){
 					ContentBody cbFile = new FileBody((File)entry.getValue());
 					reqEntity.addPart(entry.getKey(), cbFile);
+
 				}else if(entry.getValue() instanceof String){
 					try {
 						// 所有的数据都转成utf8

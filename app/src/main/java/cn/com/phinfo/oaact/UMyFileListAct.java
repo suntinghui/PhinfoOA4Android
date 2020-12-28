@@ -235,7 +235,6 @@ public class UMyFileListAct extends UMyCanMoveFileListBaseAct {
 				 **/
 
 				AttacheFileItem attacheItem = AttacheFileItem.init(it);
-				Log.e("yao", JSON.toJSONString(attacheItem));
 				FileUtils.downloadAndOpenFile(this, attacheItem);
 			}
 		}
