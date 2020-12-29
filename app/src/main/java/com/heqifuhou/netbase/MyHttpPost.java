@@ -27,7 +27,7 @@ public class MyHttpPost extends MyHttpRequestBase implements IMyHttpPostBase{
 	}
 
 	@Override
-	public byte[] postEntityToByte(String hostURL,Map<String, String> headParams, HttpEntity entity) {
+	public byte[] postEntityToByte(String hostURL, Map<String, String> headParams, HttpEntity entity) {
 		try{
 			HttpEntity entityRt =  postEntityToEntity(hostURL,headParams,entity);
 			return EntityUtils.toByteArray(entityRt);

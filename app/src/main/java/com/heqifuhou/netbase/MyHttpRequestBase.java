@@ -1,5 +1,8 @@
 package com.heqifuhou.netbase;
 
+import android.util.Log;
+
+import java.nio.charset.Charset;
 import java.util.List;
 import java.util.Map;
 import java.util.Stack;
@@ -10,6 +13,7 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
+import org.apache.http.params.CoreProtocolPNames;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
@@ -23,6 +27,7 @@ public class MyHttpRequestBase implements IMyHttpRequestBase{
 	private void initHttpClient()
 	{
 		HttpParams httpParams = new BasicHttpParams();
+		httpParams.setParameter(CoreProtocolPNames.HTTP_CONTENT_CHARSET, Charset.forName("UTF-8"));//關鍵的一句,讓API識別到charset
 		HttpConnectionParams.setConnectionTimeout(httpParams, 30 * 1000);
 		HttpConnectionParams.setSoTimeout(httpParams, 30 * 1000);
 		HttpConnectionParams.setSocketBufferSize(httpParams, 8192);

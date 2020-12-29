@@ -1,8 +1,5 @@
 package cn.com.phinfo.oaact;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,8 +11,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import cn.com.phinfo.protocol.LURLInterface;
-import cn.com.phinfo.protocol.UpdatePullRun;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -23,16 +18,13 @@ import com.baidu.mapapi.model.LatLng;
 import com.heqifuhou.actbase.HttpLoginMyActBase;
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.imgutils.BitmapDataListInstanceUtils;
-import com.heqifuhou.netbase.MyNetUtil;
-import com.heqifuhou.netbase.MyStaticHttpPost;
-import com.heqifuhou.protocolbase.FastHttpResultParserBase;
 import com.heqifuhou.protocolbase.HttpResultBeanBase;
-import com.heqifuhou.protocolbase.HttpThread;
-import com.heqifuhou.protocolbase.IHttpPacketBase;
-import com.heqifuhou.protocolbase.IHttpParserBase;
-import com.heqifuhou.protocolbase.MyStaticHttpPostMultipart;
-import com.heqifuhou.protocolbase.HttpThread.IHttpRunnable;
 import com.heqifuhou.utils.ParamsCheckUtils;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import cn.com.phinfo.protocol.UpdatePullRun;
 
 public class CreateVoteAct extends HttpLoginMyActBase {
 	private int ID_LBS = 0x10, ID_REPORT = 0x11, ID_SEND_NEW = 0x12,

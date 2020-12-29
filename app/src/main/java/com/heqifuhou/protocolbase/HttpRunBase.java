@@ -41,8 +41,7 @@ public class HttpRunBase implements IHttpRunnable {
 //		}
 //		byte[] b  = MyStaticHttpPostMultipart.postPairToByte(mUrlAction, dataPacket);
 		byte[] b =  MyStaticHttpPostMultipart.postFileAndText(mUrlAction, dataPacket, filePacket);
-//		byte[] b = MyStaticHttpPost.postJsonStream(mUrlAction,
-//				byteRequestPacket);
+//		byte[] b = MyStaticHttpPost.postJsonStream(mUrlAction, byteRequestPacket);
 		if (t.isStopRuning()) {
 			return new HttpResultBeanBase();
 		}
