@@ -18,17 +18,18 @@ public class MyStaticHttpPostMultipart {
    public static byte[] postFileAndText(final String hostURL, final Map<String, Object> datas, final Map<String, Object> files) {
         MultipartEntityBuilder multipartEntityBuilder = MultipartEntityBuilder.create();
         multipartEntityBuilder.setMode(HttpMultipartMode.RFC6532);
-//        multipartEntityBuilder.setCharset(Charset.forName("UTF-8"));
 
        // 发送的数据
        try{
-           Iterator iterator = datas.entrySet().iterator();
-           while (iterator.hasNext()) {
-               Map.Entry<String, String> entry = (Map.Entry<String, String>) iterator.next();
-               multipartEntityBuilder.addTextBody(entry.getKey(), entry.getValue(), ContentType.create("text/plain", Charset.forName("UTF-8")));
+           if (datas != null) {
+               Iterator iterator = datas.entrySet().iterator();
+               while (iterator.hasNext()) {
+                   Map.Entry<String, String> entry = (Map.Entry<String, String>) iterator.next();
+                   multipartEntityBuilder.addTextBody(entry.getKey(), entry.getValue(), ContentType.create("text/plain", Charset.forName("UTF-8")));
+               }
            }
        } catch (Exception e) {
-
+            e.printStackTrace();
        }
 
        // 发送的文件

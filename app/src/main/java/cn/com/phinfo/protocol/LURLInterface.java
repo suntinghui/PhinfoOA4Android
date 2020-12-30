@@ -138,6 +138,15 @@ public class LURLInterface {
 						token, search, pageSize, pageNumber);
 	}
 
+	// 首页消息列表
+	public static String GET_URL_MESSAGE_STATICS_LIST() {
+		String token = DataInstance.getInstance().getToken();
+		return URL_BASE
+				+ String.format(
+				"method=message.statics.getlist&SessionKey=%s",
+				token);
+	}
+
 	// 取用户信息
 	public static String GET_URL_USERINFO() {
 		String token = DataInstance.getInstance().getToken();

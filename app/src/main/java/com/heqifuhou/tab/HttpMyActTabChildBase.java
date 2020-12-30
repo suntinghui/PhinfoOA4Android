@@ -163,7 +163,7 @@ public class HttpMyActTabChildBase extends HttpLoginMyActBase implements
 	}
 
 	@Override
-	public void onHttpResult(int id, HttpResultBeanBase obj,Object requestObj) {
+	protected void onHttpResult(int id, HttpResultBeanBase obj,Object requestObj) {
 		// TODO Auto-generated method stub
 
 	}

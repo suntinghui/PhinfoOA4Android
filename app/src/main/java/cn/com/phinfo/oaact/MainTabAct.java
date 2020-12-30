@@ -245,14 +245,14 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 
 	@AfterPermissionGranted(RC_WRITE_EXTERNAL_STORAGE)
 	private void methodRequiresTwoPermission() {
-		String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
+		String[] perms = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA};
 		if (EasyPermissions.hasPermissions(this, perms)) {
 			// Already have permission, do the thing
 			//表明已经授权，可以进行用户授予权限的操作
 		} else {
 			// Do not have permissions, request them now
 			//弹出一个对话框进行提示用户
-			EasyPermissions.requestPermissions(this, "查询附件需要读写文件权限，拒绝后无法查看附件", RC_WRITE_EXTERNAL_STORAGE, perms);
+			EasyPermissions.requestPermissions(this, "请授予权限，否则影响部分使用功能", RC_WRITE_EXTERNAL_STORAGE, perms);
 
 		}
 	}

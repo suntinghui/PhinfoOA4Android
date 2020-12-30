@@ -4,6 +4,7 @@ import java.util.List;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -114,39 +115,54 @@ public class MeetingCreateAct extends HttpMyActBase implements OnClickListener,
 	}
 
 	protected void submit() {
-		String _RoomId = inTxt.getTag().toString().trim();
-		String _start = this.startTxt.getText().toString().trim();
-		String _end = this.endTxt.getText().toString().trim();
-		String _subject = subject.getText().toString().trim();
-		String _descripition = descripition.getText().toString().trim();
-		String _reminderTimeTxt = this.reminderTimeTxt.getTag().toString().trim();
-		String _Location = outTxt.getText().toString().trim();
-		
-		if (ParamsCheckUtils.isNull(_subject)) {
-			showToast("会议主题不能为空");
-			return;
+		try {
+			String _RoomId = "";
+			if (!ParamsCheckUtils.isNull(inTxt.getTag())) {
+				_RoomId = inTxt.getTag().toString().trim();
+			}
+
+			String _start = this.startTxt.getText().toString().trim();
+			String _end = this.endTxt.getText().toString().trim();
+			String _subject = subject.getText().toString().trim();
+			String _descripition = descripition.getText().toString().trim();
+
+			String _reminderTimeTxt = "60";
+			if (!ParamsCheckUtils.isNull(this.reminderTimeTxt.getTag())) {
+				_reminderTimeTxt = this.reminderTimeTxt.getTag().toString().trim();
+			}
+
+			String _Location = outTxt.getText().toString().trim();
+
+			if (ParamsCheckUtils.isNull(_subject)) {
+				showToast("会议主题不能为空");
+				return;
+			}
+			if (ParamsCheckUtils.isNull(_descripition)) {
+				showToast("会议内容不能为空");
+				return;
+			}
+			if (ParamsCheckUtils.isNull(_start)) {
+				showToast("占用开始时间不能为空");
+				return;
+			}
+			if (ParamsCheckUtils.isNull(_end)) {
+				showToast("占用结束时间不能为空");
+				return;
+			}
+			String sTxt = (String) this.startTxt.getTag();
+			long s = Long.parseLong(sTxt);
+			long e = Long.parseLong((String) this.endTxt.getTag());
+			if (e < s) {
+				showToast("开始时间不能小于结束时间");
+				return;
+			}
+			String invtee = toMenberList();
+			this.quickHttpRequest(ID_SUBMIT, new MeetingCreateEditRun(_RoomId,_start,_end,_subject,_descripition,_reminderTimeTxt,_Location,invtee));
+		} catch (Exception e) {
+			Log.e("sth", "创建会议参数时出错");
+			e.printStackTrace();
 		}
-		if (ParamsCheckUtils.isNull(_descripition)) {
-			showToast("会议内容不能为空");
-			return;
-		}
-		if (ParamsCheckUtils.isNull(_start)) {
-			showToast("占用开始时间不能为空");
-			return;
-		}
-		if (ParamsCheckUtils.isNull(_end)) {
-			showToast("占用结束时间不能为空");
-			return;
-		}
-		String sTxt = (String) this.startTxt.getTag();
-		long s = Long.parseLong(sTxt);
-		long e = Long.parseLong((String) this.endTxt.getTag());
-		if (e < s) {
-			showToast("开始时间不能小于结束时间");
-			return;
-		}
-		String invtee = toMenberList();
-		this.quickHttpRequest(ID_SUBMIT, new MeetingCreateEditRun(_RoomId,_start,_end,_subject,_descripition,_reminderTimeTxt,_Location,invtee));
+
 	}
 
 	protected void onRefresh() {
