@@ -8,14 +8,16 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="wrap_content"
-        android:layout_height="fill_parent"
+        android:layout_width="168px"
+        android:layout_height="168px"
         android:src="@drawable/default_image_layer" />
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
         android:layout_marginLeft="10dp"
         android:orientation="vertical" >
 
@@ -25,23 +27,44 @@
             android:layout_height="wrap_content"
             android:gravity="left"
             android:textColor="#333333"
-            android:textSize="18sp" />
+            android:text="正在加载..."
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/des"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_marginTop="2dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
             android:gravity="left"
+            android:text="正在加载..."
             android:textColor="#666666"
-            android:textSize="14sp" />
+            android:textSize="13sp" />
     </LinearLayout>
 
-    <com.heqifuhou.view.BadgeView
-        android:id="@+id/badgeView"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text=""/>
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/dateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:textSize="13sp"
+            android:textColor="#666666"
+            android:layout_gravity="center"
+            android:text=""/>
+
+        <cn.bingoogolapple.badgeview.BGABadgeTextView
+            android:id="@+id/badgeView"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"/>
+
+    </LinearLayout>
 
 </LinearLayout>

@@ -1,16 +1,5 @@
 package com.heqifuhou.actbase;
 
-import com.heqifuhou.netbase.MyNetUtil;
-import com.heqifuhou.protocolbase.HttpResultBeanBase;
-import com.heqifuhou.protocolbase.HttpThread.IThreadResultListener;
-import com.heqifuhou.textdrawable.IConfigBuilder;
-import com.heqifuhou.textdrawable.TextDrawable;
-import com.heqifuhou.utils.ParamsCheckUtils;
-import com.nostra13.universalimageloader.core.DisplayImageOptions;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -26,6 +15,17 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
+
+import com.heqifuhou.netbase.MyNetUtil;
+import com.heqifuhou.protocolbase.HttpResultBeanBase;
+import com.heqifuhou.protocolbase.HttpThread.IThreadResultListener;
+import com.heqifuhou.textdrawable.TextDrawable;
+import com.heqifuhou.utils.ParamsCheckUtils;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.assist.FailReason;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
+
 import cn.com.phinfo.oaact.R;
 
 //网络相关的功能全集中到这儿了

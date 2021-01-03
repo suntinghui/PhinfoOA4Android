@@ -16,7 +16,7 @@ import com.heqifuhou.utils.ParamsCheckUtils;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
-import com.nostra13.universalimageloader.core.assist.ImageLoadingListener;
+import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 
 public abstract class MyImgAdapterBaseAbs<E> extends MyAdapterBaseAbs<E> {
 	private static DisplayImageOptions options;

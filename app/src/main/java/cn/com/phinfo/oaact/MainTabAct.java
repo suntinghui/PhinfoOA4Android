@@ -159,13 +159,14 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 	};
 
 	private void initView() {
-		final Class<?>[] actList = { Tab1GroupAct.class, Tab2GroupAct.class,
-				Tab3GroupAct.class, Tab4GroupAct.class };
+		final Class<?>[] actList = { Tab1GroupAct.class, Tab2GroupAct.class, Tab5GroupAct.class, Tab4GroupAct.class };
 		tabHost = this.getTabHost();
 		for (int i = 0; i < actList.length; i++) {
+			Intent intent = new Intent(this, actList[i]);
+
 			TabSpec ts = tabHost.newTabSpec(tagList[i])
 					.setIndicator(tagList[i])
-					.setContent(new Intent(this, actList[i]));
+					.setContent(intent);
 			tabHost.addTab(ts);
 		}
 
@@ -179,23 +180,20 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 
 	// 处理按钮组的事件
 	private final OnCheckedChangeListener ocheckedListener = new OnCheckedChangeListener() {
-		public void onCheckedChanged(MyFlowRadioGroup myFlowRadioGroup,
-				int checkedId) {
+		public void onCheckedChanged(MyFlowRadioGroup myFlowRadioGroup,	int checkedId) {
 			switch (checkedId) {
-			case R.id.radio_button0:
-				// badgeV0.setVisibility(View.GONE);
-				// badge0.hide();
-				tabHost.setCurrentTabByTag(tagList[0]);
-				break;
-			case R.id.radio_button1:
-				tabHost.setCurrentTabByTag(tagList[1]);
-				break;
-			case R.id.radio_button2:
-				tabHost.setCurrentTabByTag(tagList[2]);
-				break;
-			case R.id.radio_button3:
-				tabHost.setCurrentTabByTag(tagList[3]);
-				break;
+				case R.id.radio_button0: // 消息
+					tabHost.setCurrentTabByTag(tagList[0]);
+					break;
+				case R.id.radio_button1: // 工作
+					tabHost.setCurrentTabByTag(tagList[1]);
+					break;
+				case R.id.radio_button5:// 通讯录
+					tabHost.setCurrentTabByTag(tagList[2]);
+					break;
+				case R.id.radio_button3:// 我的
+					tabHost.setCurrentTabByTag(tagList[3]);
+					break;
 			}
 		}
 	};

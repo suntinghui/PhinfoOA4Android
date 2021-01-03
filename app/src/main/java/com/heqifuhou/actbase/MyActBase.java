@@ -290,6 +290,13 @@ public class MyActBase extends FragmentActivity implements IBroadcastAction {
 		}
 	}
 
+	protected final void showBackNav() {
+		View v = this.findViewById(R.id.nav_back);
+		if (v != null) {
+			v.setVisibility(View.VISIBLE);
+		}
+	}
+
 	protected final void addTextNav(final String titleText) {
 		this.addTextNav(onBackListener, null, titleText, "", -1);
 	}

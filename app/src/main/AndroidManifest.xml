@@ -215,6 +215,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Activity_Base" />
         <activity
+            android:name=".Tab5GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
             android:name=".Tab1HomeAct"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"

@@ -8,6 +8,7 @@ import com.heqifuhou.actbase.MyActBase;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.Contacts;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -27,6 +28,15 @@ public class AddressAct extends MyActBase implements OnClickListener, OnItemClic
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		this.addTextNav("通讯录");
+
+		boolean showBack = this.getIntent().getBooleanExtra("showBack", false);
+		if (showBack) {
+			this.showBackNav();
+		} else {
+			this.hideBackNav();
+		}
+
+
 		this.addViewFillInRoot(R.layout.act_offten_address);
 		refresh = (ListView) this.findViewById(R.id.refresh);
 		awayLeft = (ImageView) this.findViewById(R.id.awayNext);

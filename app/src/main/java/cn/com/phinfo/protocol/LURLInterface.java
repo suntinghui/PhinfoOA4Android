@@ -31,6 +31,10 @@ public class LURLInterface {
 		return URL_BASE;
 	}
 
+	public static String getUrlWeb() {
+		return URL_WEB;
+	}
+
 	// 登陆
 	public static String GET_URL_LOGIN(String name, String pwd) {
 //		String rid = JPushInterface.getRegistrationID(MyApplet.getInstance()
