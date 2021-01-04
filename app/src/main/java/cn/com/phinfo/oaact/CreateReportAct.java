@@ -8,6 +8,7 @@ import java.util.List;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import cn.com.phinfo.protocol.UploadReportRun;
 import cn.com.phinfo.protocol.UploadUpdateReportRun;
 
+import com.alibaba.fastjson.JSON;
 import com.baidu.mapapi.model.LatLng;
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.imgutils.BitmapDataListInstanceUtils;
@@ -43,17 +45,20 @@ public class CreateReportAct extends MyBaseBitmapAct {
 		int type = this.getIntent().getExtras().getInt("TYPE",0);
 		String title = "发送日报";
 		WorklogType =3;
-		if(type==2){
+		if (type == 1) {
+			title = "发送日报";
+			WorklogType =3;
+		} else if(type == 2){
 			title = "发送周报";
 			WorklogType =2;
-		}else if(type==3){
+		} else if(type == 3){
 			title = "发送月报";
 			WorklogType =1;
-		}
-		else if(type==4){
+		} else if(type == 4){
 			title = "发送年报";
 			WorklogType =0;
 		}
+
 		this.addTextNav(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -64,6 +69,7 @@ public class CreateReportAct extends MyBaseBitmapAct {
 				}
 			}
 		},title,"发送");
+
 		this.addViewFillInRoot(R.layout.act_create_report);
 		liRoot = (ViewGroup) this.findViewById(R.id.liLayout);
 		liRoot.addView(InitBitmapView());
@@ -80,11 +86,13 @@ public class CreateReportAct extends MyBaseBitmapAct {
 				startActivityForResult(intent, ID_LBS);
 			}
 		});
+
 		//是否可见
 		this.findViewById(R.id.visibleBtn).setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
 				Intent intent = new Intent(CreateReportAct.this, ReportVisibleAct.class);
+				intent.putExtra("initVisible", visibleResult);
 				intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivityForResult(intent, ID_REPORT);
 			}
@@ -107,7 +115,7 @@ public class CreateReportAct extends MyBaseBitmapAct {
 		}
 		IdentityHashMap<String, Object> has = new IdentityHashMap<String, Object>();
 		has.put("content", content);
-		has.put("WorklogType", WorklogType);
+		has.put("WorklogType", WorklogType+"");
 		has.put("location", Bulding);
 		if(currLatLng!=null){
 			has.put("Longitude", currLatLng.longitude);
@@ -135,6 +143,7 @@ public class CreateReportAct extends MyBaseBitmapAct {
 				has.put(key, f);
 			}
 		}
+
 		this.quickHttpRequest(ID_SEND_NEW, new UploadReportRun("",has));
 	}
 	//更新
@@ -160,6 +169,7 @@ public class CreateReportAct extends MyBaseBitmapAct {
 		if(requestCode == ID_REPORT&&resultCode == RESULT_OK){
 			visibleResult = data.getExtras().getString("VISIBLE");
 			groupidResult = data.getExtras().getString("GROUPID");
+
 			if(visibleResult.equals("0")){
 				visible.setText("所有人能看");
 			}else if(visibleResult.equals("1")){

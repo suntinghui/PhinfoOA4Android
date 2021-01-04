@@ -40,6 +40,7 @@ public class ReportVisibleAct extends HttpMyActBase implements OnClickListener,O
 				finish();
 			}
 		},"可见性","确定");
+
 		this.addViewFillInRoot(R.layout.act_report_sel);
 		list = (ListView) this.findViewById(R.id.list);
 		adapter = new VisibleGroupAdapter(this);
@@ -62,11 +63,19 @@ public class ReportVisibleAct extends HttpMyActBase implements OnClickListener,O
 		
 		list.setVisibility(View.GONE);
 		addGroup.setVisibility(View.GONE);
-		pic1.setImageResource(R.drawable.tick_hover);
+		pic1.setImageResource(R.drawable.tick_n);
 		pic2.setImageResource(R.drawable.tick_n);
 		pic3.setImageResource(R.drawable.tick_n);
-		
-		visible = "0";
+
+		visible = this.getIntent().getExtras().getString("initVisible", "0");
+		if (visible.equalsIgnoreCase("0")) {
+			pic1.setImageResource(R.drawable.tick_hover);
+		} else if (visible.equalsIgnoreCase("1")) {
+			pic2.setImageResource(R.drawable.tick_hover);
+		} else if (visible.equalsIgnoreCase("3")) {
+			pic3.setImageResource(R.drawable.tick_hover);
+		}
+
 		onRefresh();
 	}
 
