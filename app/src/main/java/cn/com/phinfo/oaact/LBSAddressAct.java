@@ -260,7 +260,6 @@ public class LBSAddressAct extends HttpMyActBase implements
 	@Override
 	protected void onHttpResult(int id, HttpResultBeanBase obj,
 			Object requestObj) {
-
 	}
 
 	@Override
