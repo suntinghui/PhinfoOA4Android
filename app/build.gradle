@@ -16,8 +16,9 @@ android {
         applicationId "cn.com.phinfo.oaact"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 5936
-        versionName "5.9.36"
+        versionCode 5937
+        versionName "5.9.37"
+        multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -82,6 +83,8 @@ dependencies {
 
     // https://github.com/nostra13/Android-Universal-Image-Loader
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+
+    implementation 'cn.hutool:hutool-all:5.5.7'
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
 

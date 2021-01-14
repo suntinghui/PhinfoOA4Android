@@ -1008,7 +1008,7 @@ public class LURLInterface {
 	//模块可配置
 	public static String GET_UR_APP_MODULES(){
 		String token = DataInstance.getInstance().getToken();
-		String url =  URL_BASE+String.format("method=app.modules.getlist&SessionKey=%s",token);
+		String url =  URL_BASE+String.format("method=app.module.user.getlist&SessionKey=%s",token);
 		return url;
 	}
 	

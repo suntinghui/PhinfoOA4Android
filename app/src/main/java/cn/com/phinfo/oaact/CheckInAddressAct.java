@@ -16,6 +16,7 @@ import android.os.Message;
 import android.os.PowerManager;
 import android.provider.Settings;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -380,6 +381,7 @@ public class CheckInAddressAct extends HttpMyActBase implements
 		if (location == null || mMapView == null) {
 			return;
 		}
+
 		if(62==location.getLocType()||63==location.getLocType()||67==location.getLocType()
 				||(161<location.getLocType()&&168<location.getLocType())){
 			showToast("定位失败，请检查是否打开定位权限");

@@ -2,6 +2,7 @@ package cn.com.phinfo.oaact;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -42,6 +43,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.PoiInfo;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
+import com.baidu.mapapi.search.poi.PoiDetailSearchResult;
 import com.baidu.mapapi.search.poi.PoiIndoorResult;
 import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
 import com.baidu.mapapi.search.poi.PoiResult;
@@ -180,6 +182,11 @@ public class LBSBuildingAct extends HttpMyActBase implements
 		}
 
 		@Override
+		public void onGetPoiDetailResult(PoiDetailSearchResult poiDetailSearchResult) {
+
+		}
+
+		@Override
 		public void onGetPoiIndoorResult(PoiIndoorResult arg0) {
 			// TODO Auto-generated method stub
 
@@ -190,8 +197,7 @@ public class LBSBuildingAct extends HttpMyActBase implements
 	/**
 	 * 监听位置发生了变化
 	 */
-	private class MyMapStatusChangeListener implements
-			BaiduMap.OnMapStatusChangeListener {
+	private class MyMapStatusChangeListener implements BaiduMap.OnMapStatusChangeListener {
 
 		@Override
 		public void onMapStatusChangeStart(MapStatus mapStatus) {
@@ -200,6 +206,11 @@ public class LBSBuildingAct extends HttpMyActBase implements
 				refreshText.setVisibility(View.VISIBLE);
 				listView.setVisibility(View.GONE);
 			}
+
+		}
+
+		@Override
+		public void onMapStatusChangeStart(MapStatus mapStatus, int i) {
 
 		}
 
@@ -349,6 +360,7 @@ public class LBSBuildingAct extends HttpMyActBase implements
 		}
 	}
 
+	@SuppressLint("InvalidWakeLockTag")
 	@Override
 	protected void onResume() {
 		super.onResume();

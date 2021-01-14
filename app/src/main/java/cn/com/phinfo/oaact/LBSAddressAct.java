@@ -2,6 +2,7 @@ package cn.com.phinfo.oaact;
 
 import java.util.List;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -36,6 +37,7 @@ import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.core.PoiInfo;
 import com.baidu.mapapi.search.poi.OnGetPoiSearchResultListener;
 import com.baidu.mapapi.search.poi.PoiDetailResult;
+import com.baidu.mapapi.search.poi.PoiDetailSearchResult;
 import com.baidu.mapapi.search.poi.PoiIndoorResult;
 import com.baidu.mapapi.search.poi.PoiNearbySearchOption;
 import com.baidu.mapapi.search.poi.PoiResult;
@@ -176,17 +178,21 @@ public class LBSAddressAct extends HttpMyActBase implements
 		}
 
 		@Override
-		public void onGetPoiIndoorResult(PoiIndoorResult arg0) {
-			// TODO Auto-generated method stub
+		public void onGetPoiDetailResult(PoiDetailSearchResult poiDetailSearchResult) {
 
 		}
+
+		@Override
+		public void onGetPoiIndoorResult(PoiIndoorResult poiIndoorResult) {
+
+		}
+
 	}
 
 	/**
 	 * 监听位置发生了变化
 	 */
-	private class MyMapStatusChangeListener implements
-			BaiduMap.OnMapStatusChangeListener {
+	private class MyMapStatusChangeListener implements  BaiduMap.OnMapStatusChangeListener {
 
 		@Override
 		public void onMapStatusChangeStart(MapStatus mapStatus) {
@@ -196,6 +202,11 @@ public class LBSAddressAct extends HttpMyActBase implements
 			// listView.setVisibility(View.GONE);
 			// refreshText.setText("正在刷新...");
 			// }
+
+		}
+
+		@Override
+		public void onMapStatusChangeStart(MapStatus mapStatus, int i) {
 
 		}
 
@@ -318,6 +329,7 @@ public class LBSAddressAct extends HttpMyActBase implements
 		}
 	}
 
+	@SuppressLint("InvalidWakeLockTag")
 	@Override
 	protected void onResume() {
 		super.onResume();
@@ -325,8 +337,7 @@ public class LBSAddressAct extends HttpMyActBase implements
 		if (mWakeLock == null) {
 			// 获取唤醒锁,保持屏幕常亮
 			PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
-			mWakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK,
-					"RecordPlayAct");
+			mWakeLock = pm.newWakeLock(PowerManager.SCREEN_BRIGHT_WAKE_LOCK, "RecordPlayAct");
 			mWakeLock.acquire();
 		}
 	}
