@@ -41,6 +41,37 @@
                 android:visibility="gone" />
         </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.0"
+            android:background="@drawable/tab_item_selector" >
+
+            <LinearLayout
+                android:id="@+id/radio_button6_left"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" >
+
+                <RadioButton
+                    android:id="@+id/radio_button6"
+                    style="@style/main_tab_bottom"
+                    android:checked="false"
+                    android:drawableTop="@drawable/tab6_selector"
+                    android:tag="radio_button6"
+                    android:text="日程" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/radio_button6_badge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@id/radio_button6_left"
+                android:background="@drawable/red_point"
+                android:visibility="gone" />
+        </RelativeLayout>
+
         <RadioButton
             android:id="@+id/radio_button1"
             style="@style/main_tab_bottom"

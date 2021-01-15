@@ -220,6 +220,11 @@
             android:screenOrientation="portrait"
             android:theme="@style/Activity_Base" />
         <activity
+            android:name=".Tab6GroupAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
             android:name=".Tab1HomeAct"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"
@@ -733,7 +738,7 @@
         <!-- 友盟开始 -->
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="59bea51c9f06fd157e00035a" >
+            android:value="6000f701f1eb4f3f9b5f5df0" >
         </meta-data>
         <meta-data
             android:name="UMENG_CHANNEL"

@@ -85,7 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="开始"
+                    android:text="开始日期"
                     android:textColor="#666666"
                     android:textSize="14sp" />
 
@@ -124,7 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:text="结束"
+                    android:text="结束日期"
                     android:textColor="#666666"
                     android:textSize="14sp" />
 

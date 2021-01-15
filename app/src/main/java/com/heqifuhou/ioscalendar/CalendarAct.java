@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -54,6 +55,19 @@ public class CalendarAct extends HttpMyActBase implements OnItemClickListener{
 				startCreateCalendarAct();
 			}
 		});
+
+		boolean showBack = this.getIntent().getBooleanExtra("showBack", false);
+		if (showBack) {
+			navBack.setOnClickListener(onBackListener);
+			Drawable drawable =  getResources().getDrawable(R.drawable.back_red);
+			drawable.setBounds(0, 0, drawable.getMinimumWidth(),	drawable.getMinimumHeight());
+			navBack.setCompoundDrawables(drawable,null,null,null);
+			navBack.setCompoundDrawablePadding(5);
+
+		} else {
+			navBack.setOnClickListener(null);
+		}
+
 		initCalendar();
 		onRefresh();
 	}

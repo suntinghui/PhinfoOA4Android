@@ -46,7 +46,7 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 	private MyFlowRadioGroup radioGroup = null;
 	private ConfirmDialog updateDialog = null;
 	public static TabHost tabHost;
-	private final String[] tagList = { "tab1", "tab2", "tab3", "tab4" };
+	private final String[] tagList = { "tab1", "tab2", "tab3", "tab4", "tab5" };
 	private BadgeView badge0;
 	private View badgeV0;
 	private boolean isBackGroud = true;// 是否在后台
@@ -159,7 +159,7 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 	};
 
 	private void initView() {
-		final Class<?>[] actList = { Tab1GroupAct.class, Tab2GroupAct.class, Tab5GroupAct.class, Tab4GroupAct.class };
+		final Class<?>[] actList = { Tab1GroupAct.class, Tab6GroupAct.class, Tab2GroupAct.class, Tab5GroupAct.class, Tab4GroupAct.class };
 		tabHost = this.getTabHost();
 		for (int i = 0; i < actList.length; i++) {
 			Intent intent = new Intent(this, actList[i]);
@@ -185,14 +185,17 @@ public class MainTabAct extends ThreadLoginMainTabActivityBase implements
 				case R.id.radio_button0: // 消息
 					tabHost.setCurrentTabByTag(tagList[0]);
 					break;
-				case R.id.radio_button1: // 工作
+				case R.id.radio_button6: // 日程
 					tabHost.setCurrentTabByTag(tagList[1]);
 					break;
-				case R.id.radio_button5:// 通讯录
+				case R.id.radio_button1: // 工作
 					tabHost.setCurrentTabByTag(tagList[2]);
 					break;
-				case R.id.radio_button3:// 我的
+				case R.id.radio_button5:// 通讯录
 					tabHost.setCurrentTabByTag(tagList[3]);
+					break;
+				case R.id.radio_button3:// 我的
+					tabHost.setCurrentTabByTag(tagList[4]);
 					break;
 			}
 		}

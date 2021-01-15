@@ -13,6 +13,8 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.tencent.smtt.sdk.QbSdk;
+import com.umeng.analytics.MobclickAgent;
+import com.umeng.commonsdk.UMConfigure;
 
 public class MyApplet extends  Application implements Thread.UncaughtExceptionHandler{
 	private static MyApplet instance = null;
@@ -34,6 +36,10 @@ public class MyApplet extends  Application implements Thread.UncaughtExceptionHa
 		//自4.3.0起，百度地图SDK所有接口均支持百度坐标和国测局坐标，用此方法设置您使用的坐标类型.
 		//包括BD09LL和GCJ02两种坐标，默认是BD09LL坐标。
 		SDKInitializer.setCoordType(CoordType.BD09LL);
+
+		// 友盟
+		UMConfigure.init(this, "6000f701f1eb4f3f9b5f5df0", "Umeng", UMConfigure.DEVICE_TYPE_PHONE, "");
+		MobclickAgent.setCatchUncaughtExceptions(true);
 	}
 
 	// ////////////////////////////////////////////////////

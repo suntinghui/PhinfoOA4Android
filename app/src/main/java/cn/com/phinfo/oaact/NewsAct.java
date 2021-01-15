@@ -81,8 +81,7 @@ public class NewsAct extends HttpMyActBase implements OnItemClickListener {
 				new OnClickListener() {
 					@Override
 					public void onClick(View arg0) {
-						Intent intent = new Intent(NewsAct.this,
-								AddNewsAct.class);
+						Intent intent = new Intent(NewsAct.this, AddNewsAct.class);
 						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						startActivity(intent);
 
@@ -93,10 +92,8 @@ public class NewsAct extends HttpMyActBase implements OnItemClickListener {
 				new OnClickListener() {
 					@Override
 					public void onClick(View arg0) {
-						Intent intent = new Intent(NewsAct.this,
-								SearchNewsAct.class);
-						intent.putExtra("HSelectItem",
-								JSON.toJSONString(currIt));
+						Intent intent = new Intent(NewsAct.this, SearchNewsAct.class);
+						intent.putExtra("HSelectItem", JSON.toJSONString(currIt));
 						intent.putExtra("contentTypeCode", contentTypeCode);
 						intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 						startActivity(intent);

@@ -1,19 +1,28 @@
 package cn.com.phinfo.oaact;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Locale;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.TextView;
+
 import cn.com.phinfo.entity.DataInstance;
 import cn.com.phinfo.entity.SelectItem;
 import cn.com.phinfo.protocol.ActivityEventGetlistRun.ActivityEventGetlistItem;
 import cn.com.phinfo.protocol.CreateCalendarRun;
 import cn.com.phinfo.protocol.CreateCalendarRun.CreateCalendarResultBean;
 import cn.com.phinfo.protocol.UnitandaddressRun.UnitandaddressItem;
+import cn.hutool.core.date.DateUtil;
 
 import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.HttpMyActBase;
@@ -24,6 +33,7 @@ import com.heqifuhou.view.MyDateTimePick;
 import com.heqifuhou.view.MyDateTimePick.OnDateTimePickListener;
 import com.heqifuhou.view.SlidButton;
 import com.heqifuhou.view.SlidButton.OnChangedListener;
+import com.kunzisoft.switchdatetime.SwitchDateTimeDialogFragment;
 
 public class CreateCalendarAct extends HttpMyActBase implements OnClickListener {
 	protected static int ID_SUBMIT = 0x10, ID_RepeatSelectPick = 0x11,
@@ -54,8 +64,12 @@ public class CreateCalendarAct extends HttpMyActBase implements OnClickListener 
 		Location = (EditText) this.findViewById(R.id.Location);
 		descripiton = (EditText) this.findViewById(R.id.descripiton);
 		allday = (SlidButton) this.findViewById(R.id.allday);
+
 		startTxt = (TextView) this.findViewById(R.id.startTxt);
+		startTxt.setText(DateUtil.format(DateUtil.date(), "yyyy-MM-dd HH:mm:00"));
 		endTxt = (TextView) this.findViewById(R.id.endTxt);
+		endTxt.setText(DateUtil.format(DateUtil.tomorrow(), "yyyy-MM-dd HH:mm:00"));
+
 		repeatTxt = (TextView) this.findViewById(R.id.repeatTxt);
 		displayStatusTxt = (TextView) this.findViewById(R.id.displayStatusTxt);
 		reminderTimeTxt = (TextView) this.findViewById(R.id.reminderTimeTxt);
@@ -134,10 +148,12 @@ public class CreateCalendarAct extends HttpMyActBase implements OnClickListener 
 	public void onClick(View arg0) {
 		switch (arg0.getId()) {
 		case R.id.start:
-			startDateTimePick();
+			//startDateTimePick();
+			showStartDateTime();
 			break;
 		case R.id.end:
-			endDateTimePick();
+			//endDateTimePick();
+			showEndDateTime();
 			break;
 		case R.id.repeat:
 			startRepeatSelectPick();
@@ -309,6 +325,91 @@ public class CreateCalendarAct extends HttpMyActBase implements OnClickListener 
 					}
 				});
 		endDateTimePick.show();
+	}
+
+	private void showStartDateTime() {
+		// Initialize
+		SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
+				"开始日期",
+				"确定",
+				"取消"
+		);
+
+		// Assign values
+		dateTimeDialogFragment.startAtCalendarView();
+		dateTimeDialogFragment.set24HoursMode(true);
+		dateTimeDialogFragment.setMinimumDateTime(new GregorianCalendar(DateUtil.thisYear()-10, Calendar.JANUARY, 1).getTime());
+		dateTimeDialogFragment.setMaximumDateTime(new GregorianCalendar(DateUtil.thisYear()+10, Calendar.DECEMBER, 31).getTime());
+
+		dateTimeDialogFragment.setDefaultDateTime(new GregorianCalendar(DateUtil.thisYear(), DateUtil.thisMonth(), DateUtil.thisDayOfMonth(), DateUtil.thisHour(true), DateUtil.thisMinute()).getTime());
+
+		// Define new day and month format
+		try {
+			dateTimeDialogFragment.setSimpleDateMonthAndDayFormat(new SimpleDateFormat("dd MMMM", Locale.getDefault()));
+		} catch (SwitchDateTimeDialogFragment.SimpleDateMonthAndDayFormatException e) {
+			Log.e("==", e.getMessage());
+		}
+
+		// Set listener
+		dateTimeDialogFragment.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
+			@Override
+			public void onPositiveButtonClick(Date date) {
+				// Date is get on positive button click
+				// Do something
+				startTxt.setText(DateUtil.format(date, "yyyy-MM-dd HH:mm:ss"));
+			}
+
+			@Override
+			public void onNegativeButtonClick(Date date) {
+				// Date is get on negative button click
+			}
+		});
+
+		// Show
+		dateTimeDialogFragment.show(getSupportFragmentManager(), "dialog_time");
+	}
+
+	private void showEndDateTime() {
+		// Initialize
+		SwitchDateTimeDialogFragment dateTimeDialogFragment = SwitchDateTimeDialogFragment.newInstance(
+				"结束日期",
+				"确定",
+				"取消"
+		);
+
+		// Assign values
+		dateTimeDialogFragment.startAtCalendarView();
+		dateTimeDialogFragment.set24HoursMode(true);
+		dateTimeDialogFragment.setMinimumDateTime(new GregorianCalendar(DateUtil.thisYear()-10, Calendar.JANUARY, 1).getTime());
+		dateTimeDialogFragment.setMaximumDateTime(new GregorianCalendar(DateUtil.thisYear()+10, Calendar.DECEMBER, 31).getTime());
+
+		//dateTimeDialogFragment.setDefaultDateTime(new GregorianCalendar(DateUtil.thisYear(), DateUtil.thisMonth(), DateUtil.thisDayOfMonth(), DateUtil.thisHour(true), DateUtil.thisMinute()).getTime());
+		dateTimeDialogFragment.setDefaultDateTime(DateUtil.tomorrow());
+
+		// Define new day and month format
+		try {
+			dateTimeDialogFragment.setSimpleDateMonthAndDayFormat(new SimpleDateFormat("dd MMMM", Locale.getDefault()));
+		} catch (SwitchDateTimeDialogFragment.SimpleDateMonthAndDayFormatException e) {
+			Log.e("==", e.getMessage());
+		}
+
+		// Set listener
+		dateTimeDialogFragment.setOnButtonClickListener(new SwitchDateTimeDialogFragment.OnButtonClickListener() {
+			@Override
+			public void onPositiveButtonClick(Date date) {
+				// Date is get on positive button click
+				// Do something
+				endTxt.setText(DateUtil.format(date, "yyyy-MM-dd HH:mm:00"));
+			}
+
+			@Override
+			public void onNegativeButtonClick(Date date) {
+				// Date is get on negative button click
+			}
+		});
+
+		// Show
+		dateTimeDialogFragment.show(getSupportFragmentManager(), "dialog_time");
 	}
 
 	public void onDestroy() {
