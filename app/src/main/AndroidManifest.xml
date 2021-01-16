@@ -638,6 +638,16 @@
             android:screenOrientation="portrait"
             android:theme="@style/Activity_Base" />
         <activity
+            android:name=".MeetingAssistantAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
+            android:name=".MeetingAssDetailAct"
+            android:configChanges="keyboardHidden|orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/Activity_Base" />
+        <activity
             android:name=".MeetingOrderCalendarAct"
             android:configChanges="keyboardHidden|orientation"
             android:screenOrientation="portrait"

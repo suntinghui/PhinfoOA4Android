@@ -16,8 +16,8 @@ android {
         applicationId "cn.com.phinfo.oaact"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 5938
-        versionName "5.9.38"
+        versionCode 5939
+        versionName "5.9.39"
         multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -87,7 +87,16 @@ dependencies {
     implementation 'cn.hutool:hutool-all:5.5.7'
 
     // 日历控件
-    compile 'com.github.Kunzisoft:Android-SwitchDateTimePicker:2.0'
+    implementation 'com.github.Kunzisoft:Android-SwitchDateTimePicker:2.0'
+
+    // https://github.com/JavaNoober/BackgroundLibrary
+    implementation "androidx.appcompat:appcompat:1.2.0"
+    implementation 'com.noober.background:core:1.6.5'
+
+    // https://github.com/CymChad/BaseRecyclerViewAdapterHelper
+    implementation 'com.github.CymChad:BaseRecyclerViewAdapterHelper:3.0.4'
+    //下拉刷新
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01'
 
     // 友盟
     implementation "com.umeng.umsdk:common:9.1.0" //（必选）

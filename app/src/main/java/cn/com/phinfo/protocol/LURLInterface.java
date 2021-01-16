@@ -998,6 +998,24 @@ public class LURLInterface {
 						token,Id);
 		return url;
 	}
+
+	// 查询我参加的会议
+	public static String GET_URL_MY_MEETING_LIST(int currentPage) {
+		String token = DataInstance.getInstance().getToken();
+		String url = URL_BASE
+				+ String.format("method=meeting.my.getlist&SessionKey=%s&pageNumber=%d&pageSize=25", token, currentPage);
+		return url;
+	}
+
+	// 接受或拒绝会议
+	// 拒绝时必须填写desc，接受时可不填写。
+	// 接受为1， 拒绝为2
+	public static String GET_URL_OPER_MEETING(String meetingId, String desc, String status) {
+		String token = DataInstance.getInstance().getToken();
+		String url = URL_BASE
+				+ String.format("method=meeting.people.status&SessionKey=%s&Id=%s&descripiton=%s&status=%s", token, meetingId, desc, status);
+		return url;
+	}
 	
 	//客户端升级
 	public static String GET_URL_SYSUPDATE(String ver){

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center_vertical"
+    android:layout_margin="@dimen/common_main_content_top_padding"
+    android:background="@drawable/shape_10dp_corners"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center_vertical"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="邀请您参加会议"
+            android:textSize="18sp" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/acceptedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="已接受"
+            android:textSize="10sp"
+            android:padding="3dp"
+            android:textColor="#ffffff"
+            app:bl_corners_radius="2dp"
+            android:visibility="gone"
+            app:bl_gradient_angle="0"
+            app:bl_gradient_endColor="#00BB00"
+            app:bl_gradient_startColor="#00BB00" />
+
+        <com.noober.background.view.BLTextView
+            android:id="@+id/rejectedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="已拒绝"
+            android:textSize="10sp"
+            android:padding="3dp"
+            android:textColor="#ffffff"
+            android:visibility="gone"
+            app:bl_corners_radius="2dp"
+            app:bl_gradient_angle="0"
+            app:bl_gradient_endColor="#FF2D2D"
+            app:bl_gradient_startColor="#FF2D2D" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议主题："
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/themeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="绍兴第二医院会议"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议时间："
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/dateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="04月18日 12:00"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会  议  室："
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/addressTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="三楼中会议室"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/descLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="原        因："
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/descEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text=""
+            android:hint="拒绝时必须填写原因"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="#e1e1e1" />
+
+    <TextView
+        android:id="@+id/operDetailTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="查看详情"
+        android:textColor="#4F94CD"
+        android:visibility="gone"
+        android:textSize="16sp" />
+
+    <!--    接受或拒绝操作-->
+    <LinearLayout
+        android:id="@+id/operLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/operRejectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="拒绝会议"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FF2D2D"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#e1e1e1" />
+
+        <TextView
+            android:id="@+id/operAcceptTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="接受会议"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#00BB00"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <!--    确认拒绝-->
+    <LinearLayout
+        android:id="@+id/operRejectLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/cancelRejectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="取消拒绝"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#666666"
+            android:textSize="16sp" />
+
+        <View
+            android:layout_width="1px"
+            android:layout_height="match_parent"
+            android:background="#e1e1e1" />
+
+        <TextView
+            android:id="@+id/confirmRejectTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="确认拒绝"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#FF2D2D"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+
+
+
+</LinearLayout>
