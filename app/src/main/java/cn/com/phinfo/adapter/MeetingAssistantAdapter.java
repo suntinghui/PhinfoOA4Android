@@ -44,8 +44,9 @@ public class MeetingAssistantAdapter extends BaseQuickAdapter<MeetingAssListRun.
     @Override
     protected void convert(@NotNull BaseViewHolder holder, MeetingAssListRun.MeetingAssItem item) {
         holder.setText(R.id.titleTextView, StrUtil.emptyToDefault(item.getName(), "无"));
-        holder.setText(R.id.themeTextView, StrUtil.emptyToDefault(item.getSubject(), "无"));
-        holder.setText(R.id.dateTextView, StrUtil.emptyToDefault(item.getScheduledStart(), "无"));
+        holder.setText(R.id.createNameTextView, StrUtil.emptyToDefault(item.getCreatedByName(), "无"));
+        holder.setText(R.id.dateStartTextView, StrUtil.emptyToDefault(item.getScheduledStart(), "无"));
+        holder.setText(R.id.dateEndTextView, StrUtil.emptyToDefault(item.getScheduledEnd(), "无"));
         holder.setText(R.id.addressTextView, StrUtil.emptyToDefault(item.getRoomIdName(), "无"));
 
 

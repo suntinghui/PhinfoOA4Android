@@ -50,6 +50,15 @@ public class MeetingAssistantAct extends HttpMyActBase implements @Nullable OnIt
 
         this.addViewFillInRoot(R.layout.act_meeting_assistant);
 
+        this.findViewById(R.id.enterMeetingTextView).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MeetingAssistantAct.this,MeetingCalendarAct.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                MeetingAssistantAct.this.startActivity(intent);
+            }
+        });
+
         this.recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         this.recyclerView.setLayoutManager(new LinearLayoutManager(this));
 

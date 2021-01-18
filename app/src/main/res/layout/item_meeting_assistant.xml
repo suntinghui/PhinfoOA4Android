@@ -70,12 +70,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="会议主题："
+            android:text="发  起  人："
             android:textColor="#666666"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/themeTextView"
+            android:id="@+id/createNameTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="绍兴第二医院会议"
@@ -94,12 +94,12 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="会议时间："
+            android:text="开始时间："
             android:textColor="#666666"
             android:textSize="14sp" />
 
         <TextView
-            android:id="@+id/dateTextView"
+            android:id="@+id/dateStartTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="04月18日 12:00"
@@ -118,7 +118,31 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="会  议  室："
+            android:text="结束时间："
+            android:textColor="#666666"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/dateEndTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="04月18日 12:00"
+            android:textColor="#333333"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="会议地点："
             android:textColor="#666666"
             android:textSize="14sp" />
 
@@ -131,12 +155,11 @@
             android:textSize="14sp" />
     </LinearLayout>
 
+
     <LinearLayout
         android:id="@+id/descLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
         android:gravity="center_vertical"
         android:visibility="gone"
         android:orientation="horizontal">
@@ -144,7 +167,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="原        因："
+            android:text="备        注："
             android:textColor="#666666"
             android:textSize="14sp" />
 
@@ -154,7 +177,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text=""
-            android:hint="拒绝时必须填写原因"
+            android:hint="拒绝会议时必须填写"
             android:textColor="#333333"
             android:textSize="14sp" />
     </LinearLayout>

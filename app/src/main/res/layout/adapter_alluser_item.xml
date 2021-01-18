@@ -23,6 +23,7 @@
         android:gravity="center_vertical"
         android:padding="10dp" >
 
+        <!-- 用户头像 -->
         <com.heqifuhou.view.CircleImageView
             android:id="@+id/info"
             android:layout_width="40sp"
@@ -45,13 +46,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal" >
 
+                <!--  通讯录联系人姓名-->
                 <TextView
                     android:id="@+id/item_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:lines="1"
                     android:textColor="#333333"
-                    android:textSize="14sp" />                <TextView
+                    android:textSize="14sp" />
+                <TextView
                     android:id="@+id/item_text_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -112,6 +115,19 @@
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/checkedImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon_checked"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="30dp"
+            android:visibility="gone"
+            />
+
+
     </RelativeLayout>
 
 </LinearLayout>

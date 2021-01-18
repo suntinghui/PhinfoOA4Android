@@ -117,6 +117,7 @@ public abstract class MyImgAdapterBaseAbs<E> extends MyAdapterBaseAbs<E> {
             			_name = "";
             		}
             		if(name.length()>1){
+            			// 截取名字的后两位作为头像
             			_name = name.substring(name.length()-2);
             		}
             		Drawable drawable= TextDrawable.builder()
