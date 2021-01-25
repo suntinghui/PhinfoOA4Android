@@ -68,9 +68,7 @@ public class MyApplet extends  Application implements Thread.UncaughtExceptionHa
 
 	private void initQb() {
 		//搜集本地tbs内核信息并上报服务器，服务器返回结果决定使用哪个内核。
-
 		QbSdk.PreInitCallback cb = new QbSdk.PreInitCallback() {
-
 			@Override
 			public void onViewInitFinished(boolean arg0) {
 				// TODO Auto-generated method stub

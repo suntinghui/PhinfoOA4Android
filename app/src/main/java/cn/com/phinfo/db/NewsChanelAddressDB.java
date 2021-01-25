@@ -25,7 +25,7 @@ public class NewsChanelAddressDB{
 		synchronized (NewsChanelAddressDB.class) {
 			SharedPreferences xml = context.getApplicationContext()
 					.getSharedPreferences(DB_NAME,
-							Context.MODE_WORLD_WRITEABLE);
+							Context.MODE_PRIVATE);
 			SharedPreferences.Editor editor = xml.edit();
 			try{
 				editor.putString("body", JSON.toJSONString(lst));

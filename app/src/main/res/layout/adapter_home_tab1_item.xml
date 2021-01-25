@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/icon"
-        android:layout_width="168px"
-        android:layout_height="168px"
+        android:layout_width="148px"
+        android:layout_height="148px"
         android:src="@drawable/default_image_layer" />
 
     <LinearLayout

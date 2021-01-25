@@ -2,6 +2,7 @@ package com.heqifuhou.chrome;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +15,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.net.http.SslError;
+import android.util.Log;
 import android.webkit.HttpAuthHandler;
 import android.webkit.SslErrorHandler;
 import android.webkit.WebResourceResponse;
@@ -104,9 +106,23 @@ public class MyWebViewClient extends WebViewClient {
 
 	@Override
 	public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+//		Log.e("yao4",url);
+
+//		if (url.contains("ckeditor.js?t=4.4.4.5")) {
+//			InputStream is = null;
+//			try {
+//				is = MyApplet.getInstance().getAssets().open("ckeditor.js");
+//				Log.e("yao4", is.toString());
+//			} catch (IOException e) {
+//				e.printStackTrace();
+//			}
+//			return new WebResourceResponse("application/x-javascript", "UTF-8", is);
+//		}
+
 		int lastSlash = url.lastIndexOf("/");
 		if (lastSlash != -1) {
 			String suffix = url.substring(lastSlash + 1);
+			Log.e("yao5",suffix);
 			if (offlineResources.contains(suffix)) {
 				String mimeType;
 				if (suffix.endsWith(".js")) {

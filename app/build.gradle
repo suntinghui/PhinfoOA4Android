@@ -16,8 +16,8 @@ android {
         applicationId "cn.com.phinfo.oaact"
         minSdkVersion 16
         targetSdkVersion 29
-        versionCode 5941
-        versionName "5.9.41"
+        versionCode 5943
+        versionName "5.9.43"
         multiDexEnabled true
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -98,6 +98,10 @@ dependencies {
     //下拉刷新
     implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0-rc01'
 
+    // Glide
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+
     // 友盟
     implementation "com.umeng.umsdk:common:9.1.0" //（必选）
     implementation "com.umeng.umsdk:asms:1.1.3" // asms包依赖(必选)
@@ -108,6 +112,7 @@ dependencies {
     implementation "com.umeng.umsdk:oaid_vivo:1.0.0.1" // (可选)
 
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+
 
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'

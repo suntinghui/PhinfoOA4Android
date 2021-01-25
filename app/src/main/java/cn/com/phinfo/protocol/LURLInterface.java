@@ -1,6 +1,7 @@
 package cn.com.phinfo.protocol;
 
 import java.io.UnsupportedEncodingException;
+import java.util.Map;
 import java.util.UUID;
 
 import com.heqifuhou.utils.ParamsCheckUtils;
@@ -10,6 +11,10 @@ import android.util.Log;
 import cn.com.phinfo.db.SettingDB;
 import cn.com.phinfo.entity.DataInstance;
 import cn.com.phinfo.oaact.MyApplet;
+import cn.com.phinfo.utils.StringUtil;
+import cn.hutool.core.map.MapUtil;
+import cn.hutool.core.util.StrUtil;
+import cn.hutool.json.JSONUtil;
 
 public class LURLInterface {
 	static boolean bTest = false;
@@ -961,8 +966,8 @@ public class LURLInterface {
 	public static String GET_URL_ROOM_ORDER() {
 		String token = DataInstance.getInstance().getToken();
 		String url = URL_BASE
-				+ String.format("method=resource.room.order&SessionKey=%s",
-						token);
+				+ String.format("method=resource.room.order&SessionKey=%s",	token);
+
 		return url;
 	}
 	// 会议

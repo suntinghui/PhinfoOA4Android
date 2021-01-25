@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.OnGestureListener;
 import android.view.Gravity;
@@ -124,9 +125,6 @@ public class HCalendarAct extends HttpMyActBase implements OnGestureListener {
 		String endTime = String.format("%04d-%02d-%02d", endIt.getYear(),endIt.getMonth()+1,endIt.getDay());
 		this.quickHttpRequest(ID_GETDATA, new ActivityEventRun(startTime, endTime));
 	}
-
-
-
 
 	private void addGridView() {
 		LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LayoutParams.FILL_PARENT,

@@ -2,6 +2,7 @@ package cn.com.phinfo.oaact;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import cn.com.phinfo.protocol.EventGetDetailRun.EventGetDetailItem;
 import cn.com.phinfo.protocol.EventGetDetailRun.EventGetDetailResultBean;
 import cn.com.phinfo.protocol.UnitandaddressRun.UnitandaddressItem;
 
+import com.alibaba.fastjson.JSON;
 import com.heqifuhou.actbase.IBroadcastAction;
 import com.heqifuhou.protocolbase.HttpResultBeanBase;
 import com.heqifuhou.utils.ParamsCheckUtils;
@@ -33,6 +35,7 @@ public class CalendarDetailAct extends CreateCalendarAct implements OnClickListe
 		this.addBottomView(R.layout.calendar_detail_tools_bar);
 		navBack = (TextView) this.findViewById(R.id.nav_back);
 		navBtn = (TextView) this.findViewById(R.id.nav_btn);
+		navBtn.setVisibility(View.INVISIBLE);
 		navBack.setOnClickListener(onBackListener);
 		navBtn.setText("编辑");
 		this.findViewById(R.id.nav_btn).setOnClickListener(
@@ -122,21 +125,23 @@ public class CalendarDetailAct extends CreateCalendarAct implements OnClickListe
 	}
 
 	@Override
-	protected void onHttpResult(int id, HttpResultBeanBase obj,
-			Object requestObj) {
-		if(ID_GET_DETAIL == id){
+	protected void onHttpResult(int index, HttpResultBeanBase obj, Object requestObj) {
+		if(ID_GET_DETAIL == index){
 			if(obj.isOK()){
 				EventGetDetailResultBean o = (EventGetDetailResultBean)obj;
-				showInfo(o.getItem());
+				Log.e("yao3", JSON.toJSONString(o));
+				showInfo(o.getData());
 			}
 			return;
 		}
 		//删除事件
-		if(ID_CANCEL== id){
+		if(ID_CANCEL== index){
 			if(obj.isOK()){
 				Intent i = new Intent(IBroadcastAction.ACTION_DEL_CALENDAR);
 				i.putExtra("ID", id);
 				sendBroadcast(i);
+				showToast("删除成功");
+				this.finish();
 			}else{
 				showToast(obj.getMsg());
 			}
@@ -151,6 +156,7 @@ public class CalendarDetailAct extends CreateCalendarAct implements OnClickListe
 		title.setText(it.getSubject());
 		Location.setText(it.getLocation());
 		descripiton.setText(it.getDescription());
+
 		repeatTxt.setTag(it.getRecurrenceType());
 		if("true".equals(it.getIsalldayevent().toLowerCase())){
 			allday.setNowChoose(true);
@@ -162,19 +168,19 @@ public class CalendarDetailAct extends CreateCalendarAct implements OnClickListe
 		endTxt.setText(it.getScheduledend());
 		
 		//不重复
-		if("0".equals(it.getRecurrenceType())){
+		if("0".equals(it.getRecurrenceType2())){
 			repeatTxt.setText("默认无");
 		}
 		//每天
-		else if("1".equals(it.getRecurrenceType())){
+		else if("1".equals(it.getRecurrenceType2())){
 			repeatTxt.setText("每天");
 		}
 		//每周
-		else if("2".equals(it.getRecurrenceType())){
+		else if("2".equals(it.getRecurrenceType2())){
 			repeatTxt.setText("每周");
 		}
 		//每月
-		else if("3".equals(it.getRecurrenceType())){
+		else if("3".equals(it.getRecurrenceType2())){
 			repeatTxt.setText("每月");
 		}
 		
@@ -214,6 +220,7 @@ public class CalendarDetailAct extends CreateCalendarAct implements OnClickListe
 			showName += iv.GET_USER_NAME();
 			tag += iv.getSystemUserId();
 		}
+
 		DataInstance.getInstance().addUnitandaddressItem(it.getInvtee());
 		invteeTxt.setText(showName);
 		invteeTxt.setTag(tag);	

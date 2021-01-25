@@ -34,7 +34,7 @@ public class LoginDB{
 		synchronized (LoginDB.class) {
 			SharedPreferences xml = context.getApplicationContext()
 					.getSharedPreferences(LOGIN_ID,
-							Context.MODE_WORLD_WRITEABLE);
+							Context.MODE_PRIVATE);
 			SharedPreferences.Editor editor = xml.edit();
 			editor.putString("username", username);
 			editor.putString("password", password);

@@ -44,6 +44,13 @@ import com.heqifuhou.view.EditDialog.OnDialogEditOKListener;
 import com.heqifuhou.view.PopupWindows;
 import com.heqifuhou.view.PopupWindows.OnPopupWindowsItemListener;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 import androidx.viewpager.widget.ViewPager;
 import cn.com.phinfo.adapter.FileAttacheAdapter;
 import cn.com.phinfo.protocol.AttacheFileRun;
@@ -246,9 +253,11 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 		String s1 = LURLInterface.GET_URL_HANDLEWFINSTANCE(it.getInstanceId(), it.getId());
 		String s2 = LURLInterface.GET_URL_MONITOR(it.getInstanceId());
 		String s3 = LURLInterface.GET_URL_READLIST(it.getInstanceId());
+
 		mWebView[0].loadUrl(s1);
 		mWebView[1].loadUrl(s2);
 		mWebView[2].loadUrl(s3);
+
 		this.quickHttpRequest(ID_Attach, new AttacheFileRun(it.getProcessInstanceId()));
 	}
 
@@ -352,12 +361,6 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 			viewPager.setCurrentItem(3);
 			break;
 		}
-		// int idx = viewPager.getCurrentItem();
-		// if (idx == 0) {
-		// navText.setVisibility(View.VISIBLE);
-		// } else {
-		// navText.setVisibility(View.INVISIBLE);
-		// }
 	}
 
 	@Override
@@ -398,7 +401,7 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 	public void onPageStarted(WebView view, String url, Bitmap favicon) {
 		//成功的ID
 		String refreshID = MyWebViewClient.getValueByName(url, "refreshID");
-		if(!ParamsCheckUtils.isNull(refreshID)){
+		if (!ParamsCheckUtils.isNull(refreshID)) {
 			//刷新待办列表页面
 			Intent i = new Intent(IBroadcastAction.ACTION_DO_OK);
 			i.putExtra("REFRESHID", refreshID);
@@ -414,7 +417,6 @@ public class TodosDetailAct extends HttpLoginMyActBase implements ViewPager.OnPa
 
 	@Override
 	public void onLoadResource(WebView view, String url) {
-
 	}
 
 	@Override

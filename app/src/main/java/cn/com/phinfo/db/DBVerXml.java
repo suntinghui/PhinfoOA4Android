@@ -11,7 +11,7 @@ public class DBVerXml {
 	public DBVerXml() {
 		Context context = MyApplet.getInstance();
 		prefer = context.getSharedPreferences(VER_XML,
-				Context.MODE_WORLD_WRITEABLE);
+				Context.MODE_PRIVATE);
 	}
 
 	public final int getVer() {

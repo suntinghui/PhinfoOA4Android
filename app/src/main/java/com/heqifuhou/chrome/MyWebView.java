@@ -1,18 +1,25 @@
 package com.heqifuhou.chrome;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.lang.reflect.Field;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.DownloadListener;
 import android.webkit.WebChromeClient;
+import android.webkit.WebResourceResponse;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ZoomButtonsController;
+
+import cn.com.phinfo.oaact.MyApplet;
 
 public class MyWebView extends WebView {
 	public MyWebView(Context context, WebViewClient ViewClient,
@@ -47,8 +54,62 @@ public class MyWebView extends WebView {
 	}
 
 	@SuppressLint("NewApi")
-	private void initWebView(WebViewClient client,
-			WebChromeClient chromeClient, DownloadListener downLoadListerner) {
+	private void initWebView2(WebViewClient client, WebChromeClient chromeClient, DownloadListener downLoadListerner) {
+		WebSettings settings = this.getSettings();
+		// 设置WebView支持JavaScript
+		settings.setJavaScriptEnabled(true);
+		//支持自动适配
+		settings.setUseWideViewPort(true);
+		settings.setLoadWithOverviewMode(true);
+		settings.setSupportZoom(true);  //支持放大缩小
+		settings.setBuiltInZoomControls(true); //显示缩放按钮
+		settings.setBlockNetworkImage(true);// 把图片加载放在最后来加载渲染
+		settings.setAllowFileAccess(true); // 允许访问文件
+		settings.setSaveFormData(true);
+		settings.setGeolocationEnabled(true);
+		settings.setDomStorageEnabled(true);
+		settings.setJavaScriptCanOpenWindowsAutomatically(true);/// 支持通过JS打开新窗口
+		settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.NARROW_COLUMNS);
+		settings.setLayoutAlgorithm(WebSettings.LayoutAlgorithm.SINGLE_COLUMN);
+		//设置不让其跳转浏览器
+		this.setWebViewClient(new WebViewClient() {
+			@Override
+			public WebResourceResponse shouldInterceptRequest(WebView view, String url) {
+				Log.e("yao4",url);
+
+				if (url.contains("ckeditor.js?t=4.4.4.5")) {
+					InputStream is = null;
+					try {
+						is = MyApplet.getInstance().getAssets().open("ckeditor.js");
+						Log.e("yao4", is.toString());
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+					return new WebResourceResponse("application/x-javascript", "UTF-8", is);
+				}
+
+				return super.shouldInterceptRequest(view, url);
+			}
+		});
+
+		// 添加客户端支持
+		this.setWebChromeClient(new WebChromeClient());
+		// mWebView.loadUrl(TEXTURL);
+
+		//不加这个图片显示不出来
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+			this.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+		}
+		this.getSettings().setBlockNetworkImage(false);
+
+		//允许cookie 不然有的网站无法登陆
+		CookieManager mCookieManager = CookieManager.getInstance();
+		mCookieManager.setAcceptCookie(true);
+		mCookieManager.setAcceptThirdPartyCookies(this, true);
+	}
+
+	@SuppressLint("NewApi")
+	private void initWebView(WebViewClient client, WebChromeClient chromeClient, DownloadListener downLoadListerner) {
 		this.setWebViewClient(client);
 		this.setWebChromeClient(chromeClient);
 		this.setScrollBarStyle(View.SCROLLBARS_OUTSIDE_OVERLAY);
@@ -90,6 +151,7 @@ public class MyWebView extends WebView {
 		// webSettings.setLayoutAlgorithm(LayoutAlgorithm.SINGLE_COLUMN);
 
 		webSettings.setJavaScriptEnabled(true);
+		webSettings.setUseWideViewPort(true); //支持自动适配
 		webSettings.setAllowFileAccess(true);
 		webSettings.setSavePassword(false);
 		webSettings.setBuiltInZoomControls(true);
@@ -98,6 +160,13 @@ public class MyWebView extends WebView {
 		this.setDownloadListener(downLoadListerner);
 		// webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
 		webSettings.setCacheMode(WebSettings.LOAD_NO_CACHE);
+
+		//不加这个图片显示不出来
+		if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP) {
+			this.getSettings().setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW);
+		}
+		this.getSettings().setBlockNetworkImage(false);
+
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			webSettings.setDisplayZoomControls(false);
 			this.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
