@@ -31,7 +31,7 @@ public class FileUtils {
         if (suffix.equalsIgnoreCase("jpg") || suffix.equalsIgnoreCase("png") || suffix.equalsIgnoreCase("jpeg") || suffix.equalsIgnoreCase("gif") || suffix.equalsIgnoreCase("bmp") ) {
             openImg(ctx, item);
         } else {
-            openOtherFiles(ctx, item.getLink(), item.getName()+"."+item.getFileExtension());
+            openOtherFiles(ctx, item.getLink(), item.getName() + item.getId() +"."+item.getFileExtension());
         }
     }
 
